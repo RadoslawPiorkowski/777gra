@@ -1,7 +1,5 @@
 package com.gui;
 
-import com.start.Main;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -35,7 +33,6 @@ public class PanelWyboruGry extends JLayeredPane {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
 
 
         }

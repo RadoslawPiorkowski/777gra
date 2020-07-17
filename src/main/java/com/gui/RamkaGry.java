@@ -20,11 +20,12 @@ public class RamkaGry extends JFrame {
         getContentPane().setLayout(null);
         setLocationRelativeTo(null);
         setResizable(false);
-//
-//        URL url = RamkaGry.class.getResource("aaa.png");
+
+//        URL url = RamkaGry.class.getResource("resources/gifyTla/aaa.png");
 //        setIconImage(Toolkit.getDefaultToolkit().getImage(url));
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
 
     }

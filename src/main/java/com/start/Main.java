@@ -1,9 +1,6 @@
 package com.start;
 
-import com.gui.PanelKasyna;
-import com.gui.PanelPorad;
-import com.gui.PanelWyboruGry;
-import com.gui.RamkaGry;
+import com.gui.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +13,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         RamkaGry ramkaGry = new RamkaGry();
-        ramkaGry.add(new PanelPorad(ramkaGry));
+        ramkaGry.add(new PanelOpcji(ramkaGry));
 
 
 //        URL url = RamkaGry.class.getResource("aaa.png");

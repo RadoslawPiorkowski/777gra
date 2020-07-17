@@ -28,5 +28,4 @@ public class PanelKasyna extends JLayeredPane {
         ramka.add(button, 1, 0);
     }
 
-
 }

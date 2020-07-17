@@ -1,7 +1,5 @@
 package com.gui;
 
-import javafx.scene.layout.Pane;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,7 +14,7 @@ public class PanelPorad extends JLayeredPane {
         this.ramkaGry = ramka;
 
         BudowaGui.ustawGifJakoTlo(ramka, "gifyTla/porady.gif", this);
-        BudowaGui.stworzTextArea(ramka, Wprowadzenie(), 30, 110, 280, 100);
+        BudowaGui.stworzTextArea(ramka, Wprowadzenie(), 30, 130, 280, 70);
         BudowaGui.stworzTextArea(ramka, opisPostaci("Piotrek", "Łatwy", "Programista", 2000), 30, 185, 250, 100);
         BudowaGui.stworzTextArea(ramka, opisPostaci("Jan", "Normalny", "Urzędnik", 800), 30, 310, 250, 100);
         BudowaGui.stworzTextArea(ramka, opisPostaci("Seba", "Trudny", "Bezrobotny", 100), 30, 450, 250, 100);
@@ -43,11 +41,11 @@ public class PanelPorad extends JLayeredPane {
     }
 
     private String Wprowadzenie() {
-        return "Pzed rozpoczęciem gry wybierz postać.\nOd tego zależy łatwość oraz długość gry.\nPo wejści do kasyna wskaż jedną z postaci: ";
+        return "Po wejściu do kasyna wskaż jedną z postaci: ";
     }
 
     private String opisPostaci (String imie, String poziom, String praca, int finanse) {
-        return "- Imie: " + imie + "\n- Zawód: " + praca + "\n- Poziom trudnosci: " + poziom + "\n- Gotówka na start: " + finanse;
+        return "- Imie: " + imie + "\n- Zawód: " + praca + "\n- Poziom trudnosci: " + poziom + "\n- Kasa: " + finanse;
     }
 
 
@@ -67,7 +65,6 @@ public class PanelPorad extends JLayeredPane {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
 
 
         }
