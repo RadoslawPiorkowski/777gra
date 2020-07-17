@@ -11,6 +11,7 @@ public class BudowaGui {
     public static void ustawGifJakoTlo(JFrame frame, String grafika, JLayeredPane panel) {
         ClassLoader classLoader = panel.getClass().getClassLoader();
         URL grafikaGif = classLoader.getResource(grafika);
+        assert grafikaGif != null;
         ImageIcon obraz = new ImageIcon(grafikaGif);
 
         JLabel tlo = new JLabel();
@@ -53,9 +54,26 @@ public class BudowaGui {
     public static void stworzJLabel (JFrame frame, String tekst, int x, int y, int szer, int wys) {
         JLabel napis = new JLabel(tekst);
         napis.setBounds(x, y, szer, wys);
-        frame.add(napis);
+        Font font = new Font("Times New Roman", Font.PLAIN, 12);
+        napis.setFont(font);
+        napis.setForeground(Color.WHITE);
+        frame.add(napis, 1, 0);
     }
 
+    public static void stworzTextArea(JFrame frame, String tekst, int x, int y, int szer, int wys) {
+        JTextArea textArea = new JTextArea();
+        textArea.setBounds(x, y, szer, wys);
+        Font font = new Font("Times New Roman", Font.PLAIN, 14);
+        textArea.setFont(font);
+        textArea.setForeground(Color.WHITE);
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
+        textArea.setOpaque(false);
+        textArea.setEditable(false);
+        textArea.setText(tekst);
+        frame.add(textArea,1,0);
+
+    }
 
     public static void stworzSeparatorPionowy(JFrame frame, int x, int y, int szer, int wys){
         JSeparator separator = new JSeparator();
@@ -74,13 +92,7 @@ public class BudowaGui {
         return button;
     }
 
-    public static JTextArea stworzTextArea(JFrame frame, int x, int y, int szer, int wys) {
-        JTextArea textArea = new JTextArea();
-        textArea.setBounds(x, y, szer, wys);
-        textArea.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        frame.add(textArea);
-        return textArea;
-    }
+
 
     public static JTextField stworzTextField(JFrame frame, int x, int y, int szer, int wys) {
         JTextField textField = new JTextField();

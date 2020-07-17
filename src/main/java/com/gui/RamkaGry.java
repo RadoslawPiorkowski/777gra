@@ -1,40 +1,41 @@
 package com.gui;
 
+import com.start.Main;
+
+import javax.imageio.IIOException;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 
 public class RamkaGry extends JFrame {
 
-    JPanel panel;
 
     public RamkaGry() throws IOException {
         super("Kasyno 777");
-        setSize(925, 585);
+
+        setSize(new Dimension(941,622));
         getContentPane().setLayout(null);
         setLocationRelativeTo(null);
         setResizable(false);
+//
+//        URL url = RamkaGry.class.getResource("aaa.png");
+//        setIconImage(Toolkit.getDefaultToolkit().getImage(url));
 
-        ImageIcon ikonaAplikacji = wczytajIkone("bbb.jpg");
-        if (ikonaAplikacji != null)
-            setIconImage(ikonaAplikacji.getImage());
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-//        this.setIconImage(ImageIO.read(new File("aaa.png")));
+
     }
+
 
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(941, 622);
     }
 
-    private ImageIcon wczytajIkone(String grafika) {
-        URL url = this.getClass().getResource(grafika);
-        if (url != null)
-            return new ImageIcon(url);
-        else
-            return null;
-    }
+
 
 
 }

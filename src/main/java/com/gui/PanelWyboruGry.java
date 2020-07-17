@@ -1,5 +1,7 @@
 package com.gui;
 
+import com.start.Main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,22 +16,6 @@ public class PanelWyboruGry extends JLayeredPane {
         this.ramkaGry = ramka;
 
         BudowaGui.ustawGifJakoTlo(ramka, "gifyTla/startTlo.gif", this);
-
-
-//        JButton btnNewButton = new JButton("");
-//        btnNewButton.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                System.out.println("Info clicked");
-//            }
-//        });
-//
-//        String iconfilePath = this.getClass().getClassLoader().getResource("aaa.png").getFile();
-//        btnNewButton.setIcon(new ImageIcon(iconfilePath));
-//        btnNewButton.setBounds(450, 300, 190, 43);
-//        btnNewButton.setBorder(BorderFactory.createEmptyBorder());
-//        btnNewButton.setContentAreaFilled(false);
-//        btnNewButton.setFocusable(false);
-//        ramka.add(btnNewButton);
 
         BudowaGui.stworzButton(ramka, "Jeden Gracz", 370,230,190,40, new AkcjaWybory());
         BudowaGui.stworzButton(ramka, "Dwóch Graczy", 370,320,190,40, new AkcjaWybory());
@@ -49,6 +35,7 @@ public class PanelWyboruGry extends JLayeredPane {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+
 
 
         }
