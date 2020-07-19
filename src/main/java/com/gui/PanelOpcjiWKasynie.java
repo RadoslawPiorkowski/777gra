@@ -4,10 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.lang.reflect.Array;
 
-public class PanelOpcji extends JPanel {
+
+public class PanelOpcjiWKasynie extends JPanel {
 
     JFrame ramkaGry;
 
@@ -28,7 +27,7 @@ public class PanelOpcji extends JPanel {
 
 
 
-    public PanelOpcji(JFrame ramkaGry) {
+    public PanelOpcjiWKasynie(JFrame ramkaGry) {
         this.ramkaGry = ramkaGry;
 
         tlo = BudowaGui.ustawGifJakoTlo(ramkaGry, "gifyTla/opcjeTlo.gif", this);
@@ -75,7 +74,7 @@ public class PanelOpcji extends JPanel {
             usunElementy();
 
 
-            ramkaGry.add(new PanelStartowy(ramkaGry));
+            ramkaGry.add(new PanelKasyna(ramkaGry));
 
 
             invalidate();
@@ -95,7 +94,7 @@ public class PanelOpcji extends JPanel {
         kontener.remove(efektyOFF);
         kontener.remove(efektyPoziom);
         kontener.remove(wroc);
-        tlo.setVisible(false);
+        kontener.remove(tlo);
 
     }
 }
