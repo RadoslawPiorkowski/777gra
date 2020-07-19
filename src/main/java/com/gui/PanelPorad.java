@@ -26,7 +26,7 @@ public class PanelPorad extends JPanel {
         BudowaGui.stworzTextArea(ramka, opisWygranych(), 340, 350, 145, 200);
 
 
-        BudowaGui.stworzTextArea(ramka, "Oto ochroniarz naszego wspaniałego kasyna - Borys.", 580, 200, 250, 100);
+        BudowaGui.stworzTextArea(ramka, "Oto ochroniarz naszego wspaniałego kasyna - Borys.", 580, 200, 210, 100);
         BudowaGui.stworzTextArea(ramka, opisOszustw(), 580, 320, 350, 300);
 
 
@@ -70,7 +70,7 @@ public class PanelPorad extends JPanel {
 
 
     private String opisAutomatu () {
-        return "Zasady gry są proste:\n- Stań przy automacie,\n- Postaw pieniędze,\n- Wybierz ilość linii,\n- Pociągnij za dźwignię,\n- Trzymaj ksiuki!";
+        return "Zasady gry są proste:\n- Stań przy automacie,\n- Postaw pieniędze,\n- Wybierz ilość linii,\n- Pociągnij za dźwignię,\n- Cofnij dźwignię,\n- Trzymaj kciuki!";
     }
 
     private String opisWygranych () {

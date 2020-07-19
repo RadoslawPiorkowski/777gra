@@ -1,5 +1,7 @@
 package com.gui;
 
+import com.draw.Generowanie;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,10 +17,11 @@ class LosowaniePanel extends JPanel {
     JLabel zaklad;
     JLabel linie;
 
-    JTextField hajsWartosc;
-    JTextField ostatniaWygranaWartos;
-    JTextField zakladWartos;
-    JTextField linieWartosc;
+    private static JTextField hajsWartosc;
+    private static JTextField ostatniaWygranaWartos;
+    private static JTextField zakladWartos;
+    private static JTextField linieWartosc;
+
 
     JButton zwiekszZaklad;
     JButton zmniejszZaklad;
@@ -46,26 +49,27 @@ class LosowaniePanel extends JPanel {
             zakladWartos = BudowaGui.stworzTextFieldBezEdycji(ramka, 410, 428, 120, 25);
 
 
-            zwiekszZaklad = BudowaGui.stworzButton(ramka, "", 550, 428, 25, 25, new PrzerwanieLosowania());
+            zwiekszZaklad = BudowaGui.stworzButton(ramka, "", 550, 428, 25, 25, new NicNieRob());
             zwiekszZaklad.setBackground(new Color(102, 199, 91));
-            zmniejszZaklad = BudowaGui.stworzButton(ramka, "", 590, 428, 25, 25, new PrzerwanieLosowania());
+            zmniejszZaklad = BudowaGui.stworzButton(ramka, "", 590, 428, 25, 25, new NicNieRob());
             zmniejszZaklad.setBackground(new Color(212, 59, 59));
 
             linie = BudowaGui.stworzJLabel(ramka, "Linie:", 330, 480, 100, 40);
             linieWartosc = BudowaGui.stworzTextFieldBezEdycji(ramka, 410, 488, 120, 25);
 
-            zwiekszIloscLini = BudowaGui.stworzButton(ramka, "", 550, 488, 25, 25, new PrzerwanieLosowania());
+            zwiekszIloscLini = BudowaGui.stworzButton(ramka, "", 550, 488, 25, 25, new NicNieRob());
             zwiekszIloscLini.setBackground(new Color(102, 199, 91));
-            zmniejszIloscLini = BudowaGui.stworzButton(ramka, "", 590, 488, 25, 25, new PrzerwanieLosowania());
+            zmniejszIloscLini = BudowaGui.stworzButton(ramka, "", 590, 488, 25, 25, new NicNieRob());
             zmniejszIloscLini.setBackground(new Color(212, 59, 59));
 
-            zakonczGre = BudowaGui.stworzButton(ramka, "Zakończ Gre", 730, 530, 150,30, new PrzerwanieLosowania());
+            zakonczGre = BudowaGui.stworzButton(ramka, "Zakończ", 730, 530, 150,30, new PrzerwanieLosowania());
 
             ustawWartosci();
 
         }
 
-        public void ustawWartosci () {
+
+    public void ustawWartosci () {
             hajsWartosc.setText(PanelGrySolo.getHajsWartosc().getText());
             ostatniaWygranaWartos.setText(PanelGrySolo.getOstatniaWygranaWartos().getText());
             zakladWartos.setText(PanelGrySolo.getZakladWartos().getText());
@@ -80,12 +84,53 @@ class LosowaniePanel extends JPanel {
 
                 tlo.setVisible(false);
                 kontener.remove(dzwignia);
+
+                if (PanelGrySolo.oszustwo == 5) {
+                    Generowanie.oszukuj();
+                    PanelGrySolo.oszustwo = 0;
+                } else
+                    Generowanie.random();
+
+                usunElementy();
                 kontener.add(new PanelGrySolo(ramkaGry));
-
-
                 invalidate();
                 repaint();
             }
         }
+
+
+    class NicNieRob implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+        }
     }
+
+
+    public void usunElementy() {
+        ramkaGry.getContentPane().remove(zwiekszZaklad);
+        ramkaGry.getContentPane().remove(zmniejszZaklad);
+        ramkaGry.getContentPane().remove(zmniejszIloscLini);
+        ramkaGry.getContentPane().remove(zwiekszIloscLini);
+    }
+
+
+    public static JTextField getHajsWartosc() {
+        return hajsWartosc;
+    }
+
+    public static JTextField getOstatniaWygranaWartos() {
+        return ostatniaWygranaWartos;
+    }
+
+    public static JTextField getZakladWartos() {
+        return zakladWartos;
+    }
+
+    public static JTextField getLinieWartosc() {
+        return linieWartosc;
+    }
+
+
+}
 

@@ -22,10 +22,24 @@ public class BudowaGui {
 
         tlo.setBounds(0,0,925,585);
         frame.getContentPane().add(tlo, 3,0);
-
         return tlo;
     }
 
+    public static JLabel ustawSymbol(JFrame frame, String grafika, JPanel panel, int x, int y) {
+
+        ClassLoader classLoader = panel.getClass().getClassLoader();
+        URL grafikaGif = classLoader.getResource(grafika);
+
+        ImageIcon obraz = new ImageIcon(grafikaGif);
+
+        JLabel symbol = new JLabel();
+        symbol.setIcon(obraz);
+        obraz.setImageObserver(symbol);
+
+        symbol.setBounds(x,y,100,100);
+        frame.getContentPane().add(symbol, 1,0);
+        return symbol;
+    }
 
 
     public static JButton stworzButton(JFrame frame, String nazwa, int x, int y, int szer, int wys, ActionListener actionListener) {

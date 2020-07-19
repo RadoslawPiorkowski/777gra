@@ -1,6 +1,8 @@
 package com.gui;
 
+import com.draw.Generowanie;
 import com.draw.Gracz;
+import com.draw.Znaki;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,11 +22,25 @@ public class PanelGrySolo extends JPanel {
     JFrame ramkaGry;
     JLabel tlo;
 
+    static int oszustwo = 0;
+
+
+    JLabel s11;
+    JLabel s12;
+    JLabel s13;
+    JLabel s21;
+    JLabel s22;
+    JLabel s23;
+    JLabel s31;
+    JLabel s32;
+    JLabel s33;
+
     JLabel hajs;
     JLabel ostatniaWygrana;
     JLabel zaklad;
     JLabel linie;
 
+    JButton oszukuj1,oszukuj2,oszukuj3,oszukuj4,oszukuj5;
 
     JButton zwiekszZaklad;
     JButton zmniejszZaklad;
@@ -34,13 +50,44 @@ public class PanelGrySolo extends JPanel {
     JButton dzwignia;
     JButton zakonczGre;
 
+    Znaki[][] tabelaSymboloi = Generowanie.losowanie;
+
 
 
     public PanelGrySolo(JFrame ramka) {
 
         this.ramkaGry = ramka;
 
+
+
+        if (gra == 0)
+            Generowanie.random();
+
+
+
         tlo = BudowaGui.ustawGifJakoTlo(ramka, "gifyTla/automat.gif", this);
+
+        //symbole
+        s11 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[0][0].getGrafika(), this, 152, 62);
+        s12 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[0][1].getGrafika(), this, 282, 62);
+        s13 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[0][2].getGrafika(), this, 412, 62);
+
+        s21 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[1][0].getGrafika(), this, 148, 172);
+        s22 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[1][1].getGrafika(), this, 278, 172);
+        s23 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[1][2].getGrafika(), this, 408, 172);
+
+        s31 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[2][0].getGrafika(), this, 148, 282);
+        s32 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[2][1].getGrafika(), this, 278, 282);
+        s33 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[2][2].getGrafika(), this, 408, 282);
+
+
+        oszukuj4 = BudowaGui.stworzUkrytyButton(true,ramka,"" , 95, 78, 30,30, new Oszukuj());
+        oszukuj2 = BudowaGui.stworzUkrytyButton(true, ramka,"" , 95, 145, 30,30, new Oszukuj());
+        oszukuj1 = BudowaGui.stworzUkrytyButton(true,ramka,"" , 95, 210, 30,30, new Oszukuj());
+        oszukuj3 = BudowaGui.stworzUkrytyButton(true,ramka,"" , 93, 271, 30,30, new Oszukuj());
+        oszukuj5 = BudowaGui.stworzUkrytyButton(true, ramka,"" , 95, 335, 30,30, new Oszukuj());
+
+
         dzwignia = BudowaGui.stworzUkrytyButton(true,ramka, "", 587, 138, 50,150, new Losowanie());
 
         hajs = BudowaGui.stworzJLabel(ramka, "Gotówka:", 80, 420, 100, 40);
@@ -68,7 +115,7 @@ public class PanelGrySolo extends JPanel {
 
         zakonczGre = BudowaGui.stworzButton(ramka, "Zakończ Gre", 730, 530, 150,30, new ZakonczGre());
 
-
+        ustawWartosci();
         ustawPoczatkoweWartosci();
 
     }
@@ -83,12 +130,22 @@ public class PanelGrySolo extends JPanel {
         }
     }
 
+    public static void ustawWartosci () {
+        if (gra > 0) {
+            hajsWartosc.setText(LosowaniePanel.getHajsWartosc().getText());
+            ostatniaWygranaWartos.setText(LosowaniePanel.getOstatniaWygranaWartos().getText());
+            zakladWartos.setText(LosowaniePanel.getZakladWartos().getText());
+            linieWartosc.setText(LosowaniePanel.getLinieWartosc().getText());
+        }
+    }
 
 
     class Losowanie implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+
+
             Container kontener = ramkaGry.getContentPane();
 
             tlo.setVisible(false);
@@ -99,6 +156,28 @@ public class PanelGrySolo extends JPanel {
             repaint();
         }
     }
+
+    class Oszukuj implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+
+            Object o = actionEvent.getSource();
+
+            if (o == oszukuj1 && oszustwo == 0)
+                setOszustwo(1);
+            else if (o == oszukuj2 && oszustwo == 1)
+                setOszustwo(2);
+            else if (o == oszukuj3 && oszustwo == 2)
+                setOszustwo(3);
+            else if (o == oszukuj4 && oszustwo == 3)
+                setOszustwo(4);
+            else if (o == oszukuj5 && oszustwo == 4)
+                setOszustwo(5);
+
+        }
+    }
+
 
     class ZwiekszZaklad implements ActionListener {
 
@@ -153,13 +232,17 @@ public class PanelGrySolo extends JPanel {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
 
-            int decyzja = JOptionPane.showConfirmDialog(null, "Może jeszcze jedna gra?", "Zostań, jeszcze tylko jedna gra...", JOptionPane.YES_NO_OPTION);
-            if (decyzja == JOptionPane.NO_OPTION) {
+            Object[] opcje = {"Tak, wychodze!", "Nie, no zostane"};
+
+            int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcesz wyjść z gry?", "Wyjśćie", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje[0]);
+            if (decyzja == JOptionPane.YES_OPTION) {
                 Container kontener = ramkaGry.getContentPane();
                 tlo.setVisible(false);
                 kontener.remove(dzwignia);
+                kontener.remove(zakonczGre);
+                usunElementy();
                 kontener.add(new PanelStartowy(ramkaGry));
-                gra = 0;
+                PanelGrySolo.gra = 0;
                 invalidate();
                 repaint();
             }
@@ -167,6 +250,14 @@ public class PanelGrySolo extends JPanel {
         }
     }
 
+
+
+    public void usunElementy() {
+        ramkaGry.getContentPane().remove(zwiekszZaklad);
+        ramkaGry.getContentPane().remove(zmniejszZaklad);
+        ramkaGry.getContentPane().remove(zmniejszIloscLini);
+        ramkaGry.getContentPane().remove(zwiekszIloscLini);
+    }
 
 
     public static JTextField getHajsWartosc() {
@@ -183,5 +274,9 @@ public class PanelGrySolo extends JPanel {
 
     public static JTextField getLinieWartosc() {
         return linieWartosc;
+    }
+
+    public void setOszustwo(int oszustwo) {
+        PanelGrySolo.oszustwo = oszustwo;
     }
 }

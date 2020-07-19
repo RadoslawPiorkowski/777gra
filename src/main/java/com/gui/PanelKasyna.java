@@ -44,8 +44,6 @@ public class PanelKasyna extends JPanel {
              Gracz.setGotowka(2000);
              zmienPanel(new PanelGrySolo(ramkaGry));
 
-
-
          }
      }
 
@@ -91,14 +89,15 @@ public class PanelKasyna extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            int decyzja = JOptionPane.showConfirmDialog(null, "Czy napewno chcesz wyjść z Kasyna?", "Wyjśćie", JOptionPane.YES_NO_OPTION);
+
+            Object[] opcje = {"Tak", "Nie"};
+
+            int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcesz wyjść z Kasyna?", "Wyjśćie", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje[0]);
             if (decyzja == JOptionPane.YES_OPTION) {
                 tlo.setVisible(false);
                 zmienPanel(new PanelStartowy(ramkaGry));
             }
-
         }
-
     }
 
 
