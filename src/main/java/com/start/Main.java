@@ -1,5 +1,8 @@
 package com.start;
 
+import com.draw.Generowanie;
+import com.draw.Gracz;
+import com.draw.Sprawdzanie;
 import com.gui.PanelKasyna;
 import com.gui.PanelPorad;
 import com.gui.PanelWyboruGry;
@@ -18,7 +21,6 @@ public class Main {
         RamkaGry ramkaGry = new RamkaGry();
         ramkaGry.add(new PanelPorad(ramkaGry));
 
-
 //        URL url = RamkaGry.class.getResource("aaa.png");
 //        ramkaGry.setIconImage(Toolkit.getDefaultToolkit().getImage(url));
 
@@ -28,4 +30,6 @@ public class Main {
 
 
     }
+
+
 }
