@@ -8,7 +8,7 @@ import java.net.URL;
 public class BudowaGui {
 
 
-    public static void ustawGifJakoTlo(JFrame frame, String grafika, JLayeredPane panel) {
+    public static JLabel ustawGifJakoTlo(JFrame frame, String grafika, JPanel panel) {
         ClassLoader classLoader = panel.getClass().getClassLoader();
         URL grafikaGif = classLoader.getResource(grafika);
 
@@ -19,10 +19,13 @@ public class BudowaGui {
         obraz.setImageObserver(tlo);
 
         tlo.setBounds(0,0,925,585);
-        frame.add(tlo, 3,0);
+        frame.getContentPane().add(tlo, 3,0);
+
+        return tlo;
     }
 
-    public static void stworzButton(JFrame frame, String nazwa, int x, int y, int szer, int wys, ActionListener actionListener) {
+
+    public static JButton stworzButton(JFrame frame, String nazwa, int x, int y, int szer, int wys, ActionListener actionListener) {
         JButton button = new JButton(nazwa);
         Font czcionka = new Font("Comic Sans MS", Font.BOLD, 14);
         button.setFont(czcionka);
@@ -30,10 +33,11 @@ public class BudowaGui {
         button.addActionListener(actionListener);
         button.setForeground(Color.DARK_GRAY);
         button.setBackground(Color.LIGHT_GRAY);
-        frame.add(button, 1, 0);
+        frame.getContentPane().add(button, 1, 0);
+        return button;
     }
 
-    public static void stworzUkrytyButton(boolean czyUkryty, JFrame frame, String nazwa, int x, int y, int szer, int wys, ActionListener actionListener) {
+    public static JButton stworzUkrytyButton(boolean czyUkryty, JFrame frame, String nazwa, int x, int y, int szer, int wys, ActionListener actionListener) {
         JButton button = new JButton(nazwa);
         Font czcionka = new Font("Comic Sans MS", Font.BOLD, 14);
         button.setFont(czcionka);
@@ -42,7 +46,8 @@ public class BudowaGui {
         button.setForeground(Color.DARK_GRAY);
         button.setBackground(Color.LIGHT_GRAY);
         ukryjPrzycisk(button);
-        frame.add(button, 1, 0);
+        frame.getContentPane().add(button, 1, 0);
+        return button;
     }
 
     public static void ukryjPrzycisk(JButton button) {
@@ -60,7 +65,7 @@ public class BudowaGui {
         frame.add(napis, 1, 0);
     }
 
-    public static void JRadioButton (JFrame frame, String tekst, int x, int y, int szer, int wys, ButtonGroup buttonGroup) {
+    public static JRadioButton JRadioButton (JFrame frame, String tekst, int x, int y, int szer, int wys, ButtonGroup buttonGroup) {
         JRadioButton radioButton = new JRadioButton(tekst);
         radioButton.setBounds(x, y, szer, wys);
         radioButton.setActionCommand(radioButton.getText());
@@ -70,6 +75,7 @@ public class BudowaGui {
 
         buttonGroup.add(radioButton);
         frame.add(radioButton, 1, 0);
+        return radioButton;
     }
 
     public static void stworzTextArea(JFrame frame, String tekst, int x, int y, int szer, int wys) {
@@ -103,16 +109,6 @@ public class BudowaGui {
         separator.setOrientation(SwingConstants.VERTICAL);
         separator.setBounds(x, y, szer, wys);
         frame.add(separator);
-    }
-
-
-
-    public static JButton stworzButton(JFrame frame, String nazwa, int x, int y, int szer, int wys, ActionListener actionListener, boolean czyPrzypisany) {
-        JButton button = new JButton(nazwa);
-        button.setBounds(x, y, szer, wys);
-        button.addActionListener(actionListener);
-        frame.add(button);
-        return button;
     }
 
 
