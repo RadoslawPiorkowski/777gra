@@ -25,6 +25,7 @@ public class BudowaGui {
     }
 
 
+
     public static JButton stworzButton(JFrame frame, String nazwa, int x, int y, int szer, int wys, ActionListener actionListener) {
         JButton button = new JButton(nazwa);
         Font czcionka = new Font("Comic Sans MS", Font.BOLD, 14);
@@ -56,14 +57,16 @@ public class BudowaGui {
         button.setBorderPainted(false);
     }
 
-    public static void stworzJLabel (JFrame frame, String tekst, int x, int y, int szer, int wys) {
+    public static JLabel stworzJLabel (JFrame frame, String tekst, int x, int y, int szer, int wys) {
         JLabel napis = new JLabel(tekst);
         napis.setBounds(x, y, szer, wys);
         Font font = new Font("Times New Roman", Font.PLAIN, 14);
         napis.setFont(font);
         napis.setForeground(Color.WHITE);
         frame.add(napis, 1, 0);
+        return napis;
     }
+
 
     public static JRadioButton JRadioButton (JFrame frame, String tekst, int x, int y, int szer, int wys, ButtonGroup buttonGroup) {
         JRadioButton radioButton = new JRadioButton(tekst);
@@ -104,6 +107,18 @@ public class BudowaGui {
         return jSlider;
     }
 
+    public static JTextField stworzTextFieldBezEdycji(JFrame frame, int x, int y, int szer, int wys) {
+        JTextField textField = new JTextField();
+        textField.setBounds(x, y, szer, wys);
+        frame.add(textField);
+        textField.setEditable(false);
+        textField.setForeground(new Color(71,59,45));
+        textField.setBackground(new Color(145, 185, 219));
+        textField.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        frame.getContentPane().add(textField, 1, 0);
+        return textField;
+    }
+
     public static void stworzSeparatorPionowy(JFrame frame, int x, int y, int szer, int wys){
         JSeparator separator = new JSeparator();
         separator.setOrientation(SwingConstants.VERTICAL);
@@ -120,13 +135,7 @@ public class BudowaGui {
         return textField;
     }
 
-    public static JTextField stworzTextFieldBezEdycji(JFrame frame, int x, int y, int szer, int wys) {
-        JTextField textField = new JTextField();
-        textField.setBounds(x, y, szer, wys);
-        frame.add(textField);
-        textField.setEditable(false);
-        return textField;
-    }
+
 
 
 

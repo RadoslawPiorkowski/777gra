@@ -20,8 +20,8 @@ public class PanelPorad extends JPanel {
 
         BudowaGui.stworzTextArea(ramka, Wprowadzenie(), 30, 130, 280, 70);
         BudowaGui.stworzTextArea(ramka, opisPostaci("Piotrek", "Łatwy", "Programista", 2000), 30, 185, 250, 100);
-        BudowaGui.stworzTextArea(ramka, opisPostaci("Jan", "Normalny", "Urzędnik", 800), 30, 310, 250, 100);
-        BudowaGui.stworzTextArea(ramka, opisPostaci("Seba", "Trudny", "Bezrobotny", 100), 30, 450, 250, 100);
+        BudowaGui.stworzTextArea(ramka, opisPostaci("Jan", "Normalny", "Urzędnik", 1000), 30, 310, 250, 100);
+        BudowaGui.stworzTextArea(ramka, opisPostaci("Seba", "Trudny", "Bezrobotny", 200), 30, 450, 250, 100);
 
         BudowaGui.stworzTextArea(ramka, opisAutomatu(), 340, 190, 153, 150);
         BudowaGui.stworzTextArea(ramka, opisWygranych(), 340, 350, 145, 200);
