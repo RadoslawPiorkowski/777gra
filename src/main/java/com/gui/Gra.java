@@ -13,7 +13,6 @@ public class Gra {
     public static void rozpocznijGre() throws IOException {
 
         ekranGry = new RamkaGry();
-//        panelGry = new PanelKasyna(ekranGry);
         panelGry = new PanelStartowy(ekranGry);
         ekranGry.getContentPane().add(panelGry);
 

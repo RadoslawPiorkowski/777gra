@@ -1,5 +1,7 @@
 package com.gui;
 
+import com.draw.Gracz;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -39,7 +41,11 @@ public class PanelKasyna extends JPanel {
 
          @Override
          public void actionPerformed(ActionEvent actionEvent) {
+             Gracz.setGotowka(2000);
              zmienPanel(new PanelGrySolo(ramkaGry));
+
+
+
          }
      }
 
@@ -47,7 +53,10 @@ public class PanelKasyna extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+            Gracz.setGotowka(1000);
             zmienPanel(new PanelGrySolo(ramkaGry));
+
+
         }
     }
 
@@ -55,7 +64,10 @@ public class PanelKasyna extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+            Gracz.setGotowka(200);
             zmienPanel(new PanelGrySolo(ramkaGry));
+
+
         }
     }
 

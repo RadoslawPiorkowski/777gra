@@ -8,7 +8,9 @@ import java.net.URL;
 public class BudowaGui {
 
 
+
     public static JLabel ustawGifJakoTlo(JFrame frame, String grafika, JPanel panel) {
+
         ClassLoader classLoader = panel.getClass().getClassLoader();
         URL grafikaGif = classLoader.getResource(grafika);
 
