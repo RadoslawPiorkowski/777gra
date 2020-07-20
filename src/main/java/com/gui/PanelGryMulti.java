@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 public class PanelGryMulti extends JPanel {
     JFrame ramkaGry;
     JLabel tlo;
-    public static int gra = 25;
+    public static int gra = 50;
 
     private static JTextField hajsWartosc1;
     private static JTextField ostatniaWygranaWartos1;
@@ -54,7 +54,7 @@ public class PanelGryMulti extends JPanel {
     public PanelGryMulti(JFrame ramka) {
         this.ramkaGry = ramka;
 
-        if (gra == 25)
+        if (gra == 50)
             Generowanie.random();
 
         tlo = BudowaGui.ustawGifJakoTlo(ramka, "gifyTla/automat.gif", this);
@@ -143,7 +143,7 @@ public class PanelGryMulti extends JPanel {
 
 
     public static void ustawWartosci () {
-        if (gra == 25)
+        if (gra == 50)
             ustawPoczatkoweWartosci();
         else {
             hajsWartosc1.setText(Gracz.getGotowka() + "");
@@ -174,6 +174,7 @@ public class PanelGryMulti extends JPanel {
                 Container kontener = ramkaGry.getContentPane();
                 tlo.setVisible(false);
                 kontener.remove(dzwignia);
+                usunElementy();
                 kontener.add(new LosowaniePanelMulti(ramkaGry));
                 invalidate();
                 repaint();
@@ -286,6 +287,7 @@ public class PanelGryMulti extends JPanel {
 
             int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcecie przerwać gre przed końcem?", "Wyjśćie", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje[0]);
             if (decyzja == JOptionPane.YES_OPTION) {
+                usunElementy();
                 wrocNaStart();
             }
         }
@@ -378,13 +380,6 @@ public class PanelGryMulti extends JPanel {
         repaint();
     }
 
-    public static JTextField getHajsWartosc1() {
-        return hajsWartosc1;
-    }
-
-    public static JTextField getOstatniaWygranaWartos1() {
-        return ostatniaWygranaWartos1;
-    }
 
     public static JTextField getZakladWartos1() {
         return zakladWartos1;
@@ -394,14 +389,6 @@ public class PanelGryMulti extends JPanel {
         return linieWartosc1;
     }
 
-    public static JTextField getHajsWartosc2() {
-        return hajsWartosc2;
-    }
-
-    public static JTextField getOstatniaWygranaWartos2() {
-        return ostatniaWygranaWartos2;
-    }
-
     public static JTextField getZakladWartos2() {
         return zakladWartos2;
     }
@@ -409,6 +396,5 @@ public class PanelGryMulti extends JPanel {
     public static JTextField getLinieWartosc2() {
         return linieWartosc2;
     }
-
 
 }

@@ -84,9 +84,6 @@ public class LosowaniePanel extends JPanel {
             public void actionPerformed(ActionEvent actionEvent) {
                 Container kontener = ramkaGry.getContentPane();
 
-                tlo.setVisible(false);
-                kontener.remove(dzwignia);
-
                 if (PanelGrySolo.oszustwo == 5) {
                     Generowanie.oszukuj();
                     PanelGrySolo.oszustwo = 0;
@@ -95,6 +92,7 @@ public class LosowaniePanel extends JPanel {
 
                 sprawdzWygrana();
                 usunElementy();
+                kontener.removeAll();
                 kontener.add(new PanelGrySolo(ramkaGry));
                 invalidate();
                 repaint();
@@ -111,10 +109,15 @@ public class LosowaniePanel extends JPanel {
 
 
     public void usunElementy() {
-        ramkaGry.getContentPane().remove(zwiekszZaklad);
-        ramkaGry.getContentPane().remove(zmniejszZaklad);
-        ramkaGry.getContentPane().remove(zmniejszIloscLini);
-        ramkaGry.getContentPane().remove(zwiekszIloscLini);
+        Container kontener = ramkaGry.getContentPane();
+
+        tlo.setVisible(false);
+        kontener.remove(dzwignia);
+
+        kontener.remove(zwiekszZaklad);
+        kontener.remove(zmniejszZaklad);
+        kontener.remove(zmniejszIloscLini);
+        kontener.remove(zwiekszIloscLini);
     }
 
     public static void sprawdzWygrana() {
@@ -153,7 +156,5 @@ public class LosowaniePanel extends JPanel {
     public static JTextField getLinieWartosc() {
         return linieWartosc;
     }
-
-
 }
 

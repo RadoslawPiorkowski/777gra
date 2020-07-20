@@ -71,10 +71,9 @@ public class PanelOpcji extends JPanel {
         public void actionPerformed(ActionEvent actionEvent) {
 
             usunElementy();
-
+            ramkaGry.getContentPane().removeAll();
 
             ramkaGry.add(new PanelStartowy(ramkaGry));
-
 
             invalidate();
             repaint();

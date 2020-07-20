@@ -115,11 +115,6 @@ public class LosowaniePanelMulti extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            Container kontener = ramkaGry.getContentPane();
-
-            tlo.setVisible(false);
-            kontener.remove(dzwignia);
-
 
             Generowanie.random();
 
@@ -127,7 +122,8 @@ public class LosowaniePanelMulti extends JPanel {
             sprawdzWygrana2();
             usunElementy();
             PanelGryMulti.gra--;
-            kontener.add(new PanelGryMulti(ramkaGry));
+            ramkaGry.getContentPane().removeAll();
+            ramkaGry.getContentPane().add(new PanelGryMulti(ramkaGry));
             invalidate();
             repaint();
         }
@@ -143,6 +139,10 @@ public class LosowaniePanelMulti extends JPanel {
 
 
     public void usunElementy() {
+        Container kontener = ramkaGry.getContentPane();
+        tlo.setVisible(false);
+        kontener.remove(dzwignia);
+
         ramkaGry.getContentPane().remove(zwiekszZaklad1);
         ramkaGry.getContentPane().remove(zmniejszZaklad1);
         ramkaGry.getContentPane().remove(zmniejszIloscLini1);
@@ -194,28 +194,12 @@ public class LosowaniePanelMulti extends JPanel {
     }
 
 
-    public static JTextField getHajsWartosc1() {
-        return hajsWartosc1;
-    }
-
-    public static JTextField getOstatniaWygranaWartos1() {
-        return ostatniaWygranaWartos1;
-    }
-
     public static JTextField getZakladWartos1() {
         return zakladWartos1;
     }
 
     public static JTextField getLinieWartosc1() {
         return linieWartosc1;
-    }
-
-    public static JTextField getHajsWartosc2() {
-        return hajsWartosc2;
-    }
-
-    public static JTextField getOstatniaWygranaWartos2() {
-        return ostatniaWygranaWartos2;
     }
 
     public static JTextField getZakladWartos2() {

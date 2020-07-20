@@ -2,7 +2,12 @@ G:\projektyJAVA\Projekt777\777gra\src\main\java\com\gui\PanelKasyna.java
 G:\projektyJAVA\Projekt777\777gra\src\main\java\com\gui\PanelOpcji.java
 G:\projektyJAVA\Projekt777\777gra\src\main\java\com\draw\Znaki.java
 G:\projektyJAVA\Projekt777\777gra\src\main\java\com\draw\Sprawdzanie.java
+G:\projektyJAVA\Projekt777\777gra\src\main\java\com\gui\LosowaniePanelMulti.java
+G:\projektyJAVA\Projekt777\777gra\src\main\java\com\serializacja\Mistrz.java
+G:\projektyJAVA\Projekt777\777gra\src\main\java\com\serializacja\MistrzComparatorGotowka.java
+G:\projektyJAVA\Projekt777\777gra\src\main\java\com\gui\LosowaniePanel.java
 G:\projektyJAVA\Projekt777\777gra\src\main\java\com\gui\Gra.java
+G:\projektyJAVA\Projekt777\777gra\src\main\java\com\serializacja\Serializacja.java
 G:\projektyJAVA\Projekt777\777gra\src\main\java\com\gui\PanelPorad.java
 G:\projektyJAVA\Projekt777\777gra\src\main\java\com\gui\PanelGrySolo.java
 G:\projektyJAVA\Projekt777\777gra\src\main\java\com\start\Main.java
@@ -14,4 +19,5 @@ G:\projektyJAVA\Projekt777\777gra\src\main\java\com\gui\PanelGryMulti.java
 G:\projektyJAVA\Projekt777\777gra\src\main\java\com\gui\BudowaGui.java
 G:\projektyJAVA\Projekt777\777gra\src\main\java\com\gui\PanelOpcjiWKasynie.java
 G:\projektyJAVA\Projekt777\777gra\src\main\java\com\gui\PanelWynikow.java
+G:\projektyJAVA\Projekt777\777gra\src\main\java\com\draw\GraczMulti.java
 G:\projektyJAVA\Projekt777\777gra\src\main\java\com\gui\PanelWyboruGry.java

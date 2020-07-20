@@ -2,12 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00968aa3-f31a-4fdc-b224-24e077c1cb93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/draw/GraczMulti.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gui/LosowaniePanelMulti.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/serializacja/Mistrz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/serializacja/MistrzComparatorGotowka.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/serializacja/Serializacja.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/gifyTla/topLista.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/draw/Sprawdzanie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/draw/Sprawdzanie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/draw/Generowanie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/draw/Generowanie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/draw/Gracz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/draw/Gracz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/BudowaGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/BudowaGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/LosowaniePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/LosowaniePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/LosowaniePanelMulti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/LosowaniePanelMulti.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelGryMulti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelGryMulti.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelWyboruGry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelWyboruGry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelGrySolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelGrySolo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelKasyna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelKasyna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelOpcji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelOpcji.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelWynikow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelWynikow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/start/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/start/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,14 +54,14 @@
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\projektyJAVA\Projekt777\777gra\src\main\resources\gifyTla" />
+      <recent name="G:\projektyJAVA\Projekt777\777gra\src\main\resources\symbole" />
+      <recent name="G:\projektyJAVA\Projekt777\777gra\src\main\resources" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\projektyJAVA\Projekt777\777gra\src\main\java\com\gui" />
       <recent name="G:\projektyJAVA\Projekt777\777gra\src\main\java" />
-      <recent name="G:\projektyJAVA\Projekt777\777gra\src\main\resources" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\projektyJAVA\Projekt777\777gra\src\main\resources\symbole" />
-      <recent name="G:\projektyJAVA\Projekt777\777gra\src\main\resources\gifyTla" />
       <recent name="G:\projektyJAVA\Projekt777\777gra\src\main\resources" />
     </key>
   </component>
@@ -158,11 +171,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595010618608" />
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1595251813690">
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1595256836627">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595173047230" />
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160@0.0.1920.1160" timestamp="1595251813690" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160@0.0.1920.1160" timestamp="1595256836627" />
     <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1595009865756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -171,30 +184,30 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="1170" y="328" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1595193983446" />
-    <state width="1877" height="313" key="GridCell.Tab.0.bottom" timestamp="1595254534824">
+    <state width="1877" height="313" key="GridCell.Tab.0.bottom" timestamp="1595261972568">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595011482571" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595169420061" />
-    <state width="1877" height="313" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1595254534824" />
-    <state width="1877" height="313" key="GridCell.Tab.0.center" timestamp="1595254534824">
+    <state width="1877" height="313" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1595261972568" />
+    <state width="1877" height="313" key="GridCell.Tab.0.center" timestamp="1595261972568">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595011482571" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595169420061" />
-    <state width="1877" height="313" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1595254534824" />
-    <state width="1877" height="313" key="GridCell.Tab.0.left" timestamp="1595254534824">
+    <state width="1877" height="313" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1595261972568" />
+    <state width="1877" height="313" key="GridCell.Tab.0.left" timestamp="1595261972568">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595011482571" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595169420061" />
-    <state width="1877" height="313" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1595254534824" />
-    <state width="1877" height="313" key="GridCell.Tab.0.right" timestamp="1595254534824">
+    <state width="1877" height="313" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1595261972568" />
+    <state width="1877" height="313" key="GridCell.Tab.0.right" timestamp="1595261972568">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595011482571" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595169420061" />
-    <state width="1877" height="313" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1595254534824" />
+    <state width="1877" height="313" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1595261972568" />
     <state width="1877" height="395" key="GridCell.Tab.1.bottom" timestamp="1595251345794">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>

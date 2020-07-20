@@ -13,7 +13,7 @@ public class PanelGrySolo extends JPanel {
 
     JFrame ramkaGry;
     JLabel tlo;
-    private static int gra = 0;
+    public static int gra = 0;
     static int oszustwo = 0;
     public static boolean zlapanoNaOszustwie = false;
 
@@ -52,8 +52,6 @@ public class PanelGrySolo extends JPanel {
 
         if (gra == 0)
             Generowanie.random();
-
-
 
         tlo = BudowaGui.ustawGifJakoTlo(ramka, "gifyTla/automat.gif", this);
 
@@ -106,7 +104,6 @@ public class PanelGrySolo extends JPanel {
 
         zakonczGre = BudowaGui.stworzButton(ramka, "Zakończ Gre", 730, 530, 150,30, new ZakonczGre());
 
-        System.out.println(gra);
 
         if (zlapanoNaOszustwie)
             przylapanoNaOszustiwe();
@@ -114,7 +111,6 @@ public class PanelGrySolo extends JPanel {
 
         ustawWartosci();
         czyMaszPieniadze();
-
 
     }
 
@@ -148,7 +144,6 @@ public class PanelGrySolo extends JPanel {
             if (sprawdzCzywystarczyGotowkiNaGre()) {
 
                 odejmijPieniadzeZaZaklad();
-
 
                 Container kontener = ramkaGry.getContentPane();
                 tlo.setVisible(false);
@@ -247,34 +242,18 @@ public class PanelGrySolo extends JPanel {
 
             int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcesz wyjść z gry?", "Wyjśćie", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje[0]);
             if (decyzja == JOptionPane.YES_OPTION) {
-                Container kontener = ramkaGry.getContentPane();
-                tlo.setVisible(false);
-                kontener.remove(dzwignia);
-                kontener.remove(zakonczGre);
                 usunElementy();
-                kontener.add(new PanelStartowy(ramkaGry));
-                PanelGrySolo.gra = 0;
-                invalidate();
-                repaint();
+                wrocNaStart();
             }
-
         }
     }
 
     public void czyMaszPieniadze() {
         if(Gracz.getGotowka() <= 0){
             JOptionPane.showMessageDialog(null, "Zbankrutowałeś!\nZostałeś wyrzucony z kasyna!\nZapraszamy ponownie po wypłacie");
-            Container kontener = ramkaGry.getContentPane();
-            tlo.setVisible(false);
-            kontener.remove(dzwignia);
-            kontener.remove(zakonczGre);
             usunElementy();
-            kontener.add(new PanelStartowy(ramkaGry));
-            PanelGrySolo.gra = 0;
-            invalidate();
-            repaint();
+            wrocNaStart();
         }
-
     }
 
     public boolean sprawdzCzywystarczyGotowkiNaGre() {
@@ -302,13 +281,34 @@ public class PanelGrySolo extends JPanel {
         JOptionPane.showMessageDialog(null, "Brak gototówki na taki zakład");
     }
 
+
     public void usunElementy() {
         ramkaGry.getContentPane().remove(zwiekszZaklad);
         ramkaGry.getContentPane().remove(zmniejszZaklad);
         ramkaGry.getContentPane().remove(zmniejszIloscLini);
         ramkaGry.getContentPane().remove(zwiekszIloscLini);
+
+        ramkaGry.getContentPane().remove(dzwignia);
+        ramkaGry.getContentPane().remove(zakonczGre);
+
+        ramkaGry.getContentPane().remove(oszukuj1);
+        ramkaGry.getContentPane().remove(oszukuj2);
+        ramkaGry.getContentPane().remove(oszukuj3);
+        ramkaGry.getContentPane().remove(oszukuj4);
+        ramkaGry.getContentPane().remove(oszukuj5);
+
+
     }
 
+    public void wrocNaStart() {
+        Container kontener = ramkaGry.getContentPane();
+        tlo.setVisible(false);
+        usunElementy();
+        kontener.add(new PanelStartowy(ramkaGry));
+        gra = 0;
+        invalidate();
+        repaint();
+    }
 
     public static JTextField getHajsWartosc() {
         return hajsWartosc;

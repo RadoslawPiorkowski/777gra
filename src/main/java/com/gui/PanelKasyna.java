@@ -81,7 +81,7 @@ public class PanelKasyna extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            zmienPanel(new PanelGrySolo(ramkaGry));
+            zmienPanel(new PanelWynikow(ramkaGry));
         }
     }
 
