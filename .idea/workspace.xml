@@ -2,30 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00968aa3-f31a-4fdc-b224-24e077c1cb93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/symbole/diament.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/symbole/dzwonek.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/symbole/jablko.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/symbole/pomarancz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/symbole/siedem.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/symbole/wisnia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/gifyTla/automat.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/symbole/diament.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/symbole/dzwonek.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/symbole/jablko.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/symbole/pomarancz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/symbole/siedem.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/symbole/wisnia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/draw/GraczMulti.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gui/LosowaniePanelMulti.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/draw/Generowanie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/draw/Generowanie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/draw/Znaki.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/draw/Znaki.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/draw/Serializacja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/draw/Serializacja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/draw/Sprawdzanie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/draw/Sprawdzanie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/BudowaGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/BudowaGui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/LosowaniePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/LosowaniePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelGryMulti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelGryMulti.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelGrySolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelGrySolo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelKasyna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelKasyna.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelPorad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelPorad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelStartowy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelStartowy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelWyboruGry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelWyboruGry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,11 +164,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595010618608" />
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1595195123124">
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1595251813690">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595173047230" />
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160@0.0.1920.1160" timestamp="1595195123124" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160@0.0.1920.1160" timestamp="1595251813690" />
     <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1595009865756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -189,54 +177,59 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="1170" y="328" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1595193983446" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1595256419029">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1595256773397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595011482571" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595256419029" />
-    <state width="1877" height="311" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1595197087993" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1595256419029">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595256773397" />
+    <state width="1877" height="313" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1595254534824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1595256773397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595011482571" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595256419029" />
-    <state width="1877" height="311" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1595197087993" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1595256419029">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595256773397" />
+    <state width="1877" height="313" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1595254534824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1595256773397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595011482571" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595256419029" />
-    <state width="1877" height="311" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1595197087993" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1595256419029">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595256773397" />
+    <state width="1877" height="313" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1595254534824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1595256773397">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595011482571" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595256419029" />
-    <state width="1877" height="311" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1595197087993" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595157363961">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595256773397" />
+    <state width="1877" height="313" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1595254534824" />
+    <state width="1877" height="395" key="GridCell.Tab.1.bottom" timestamp="1595251345794">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595157363961" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1595157363961">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="395" key="GridCell.Tab.1.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1595251345794" />
+    <state width="1877" height="395" key="GridCell.Tab.1.center" timestamp="1595251345794">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595157363961" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1595157363961">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="395" key="GridCell.Tab.1.center/0.0.1920.1160@0.0.1920.1160" timestamp="1595251345794" />
+    <state width="1877" height="395" key="GridCell.Tab.1.left" timestamp="1595251345794">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595157363961" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1595157363961">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="395" key="GridCell.Tab.1.left/0.0.1920.1160@0.0.1920.1160" timestamp="1595251345794" />
+    <state width="1877" height="395" key="GridCell.Tab.1.right" timestamp="1595251345794">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595157363961" />
+    <state width="1877" height="395" key="GridCell.Tab.1.right/0.0.1920.1160@0.0.1920.1160" timestamp="1595251345794" />
     <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1595012605456">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="490" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595012605456" />
-    <state x="663" y="310" key="git4idea.merge.GitPullDialog" timestamp="1595218132016">
+    <state x="946" y="0" width="974" height="1040" key="com.intellij.ide.util.TipDialog" timestamp="1595257771040">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="663" y="310" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595218132016" />
+    <state x="946" y="0" width="974" height="1040" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595257771040" />
+    <state x="953" y="0" width="974" height="1167" key="com.intellij.ide.util.TipDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1595239816052" />
     <state x="342" y="139" key="new project wizard" timestamp="1595154435297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,13 +1,15 @@
 package com.gui;
 
 import com.draw.Generowanie;
+import com.draw.Gracz;
+import com.draw.Sprawdzanie;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-class LosowaniePanel extends JPanel {
+public class LosowaniePanel extends JPanel {
 
     JFrame ramkaGry;
     JLabel tlo;
@@ -17,10 +19,10 @@ class LosowaniePanel extends JPanel {
     JLabel zaklad;
     JLabel linie;
 
-    private static JTextField hajsWartosc;
-    private static JTextField ostatniaWygranaWartos;
-    private static JTextField zakladWartos;
-    private static JTextField linieWartosc;
+    public static JTextField hajsWartosc;
+    public static JTextField ostatniaWygranaWartos;
+    public static JTextField zakladWartos;
+    public static JTextField linieWartosc;
 
 
     JButton zwiekszZaklad;
@@ -69,9 +71,9 @@ class LosowaniePanel extends JPanel {
         }
 
 
-    public void ustawWartosci () {
-            hajsWartosc.setText(PanelGrySolo.getHajsWartosc().getText());
-            ostatniaWygranaWartos.setText(PanelGrySolo.getOstatniaWygranaWartos().getText());
+    public static void ustawWartosci () {
+            hajsWartosc.setText(Gracz.getGotowka() + "");
+            ostatniaWygranaWartos.setText(Gracz.getWynik() + "");
             zakladWartos.setText(PanelGrySolo.getZakladWartos().getText());
             linieWartosc.setText(PanelGrySolo.getLinieWartosc().getText());
         }
@@ -91,6 +93,7 @@ class LosowaniePanel extends JPanel {
                 } else
                     Generowanie.random();
 
+                sprawdzWygrana();
                 usunElementy();
                 kontener.add(new PanelGrySolo(ramkaGry));
                 invalidate();
@@ -113,6 +116,26 @@ class LosowaniePanel extends JPanel {
         ramkaGry.getContentPane().remove(zmniejszIloscLini);
         ramkaGry.getContentPane().remove(zwiekszIloscLini);
     }
+
+    public static void sprawdzWygrana() {
+
+        int zaklad = Integer.parseInt(zakladWartos.getText());
+        int obstawianeLinie = Integer.parseInt(linieWartosc.getText());
+        int wartoscZakladu = zaklad * obstawianeLinie;
+
+        if (obstawianeLinie == 1)
+            Sprawdzanie.zakladJednaLinia(wartoscZakladu);
+        else if (obstawianeLinie == 2)
+            Sprawdzanie.zakladDwieLinia(wartoscZakladu);
+        else if (obstawianeLinie == 3)
+            Sprawdzanie.zakladTrzyLinia(wartoscZakladu);
+        else if (obstawianeLinie == 4)
+            Sprawdzanie.zakladCzteryLinia(wartoscZakladu);
+        else
+            Sprawdzanie.zakladPiecLinia(wartoscZakladu);
+
+    }
+
 
 
     public static JTextField getHajsWartosc() {

@@ -127,6 +127,9 @@ public class BudowaGui {
         JTextField textField = new JTextField();
         textField.setBounds(x, y, szer, wys);
         frame.add(textField);
+        Font czcionka = new Font("Time New Roman", Font.BOLD, 16);
+        textField.setFont(czcionka);
+        textField.setHorizontalAlignment(JTextField.CENTER);
         textField.setEditable(false);
         textField.setForeground(new Color(71,59,45));
         textField.setBackground(new Color(145, 185, 219));
