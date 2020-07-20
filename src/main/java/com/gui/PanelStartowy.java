@@ -65,7 +65,9 @@ public class PanelStartowy extends JPanel {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
 
-            int decyzja = JOptionPane.showConfirmDialog(null, "Czy napewno chcesz wyjść z gry?", "Wyjśćie", JOptionPane.YES_NO_OPTION);
+            Object[] opcje = {"Tak", "Nie"};
+
+            int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcesz wyjść z gry?", "Wyjśćie", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje[0]);
             if (decyzja == JOptionPane.YES_OPTION)
                 ramkaGry.dispose();
         }

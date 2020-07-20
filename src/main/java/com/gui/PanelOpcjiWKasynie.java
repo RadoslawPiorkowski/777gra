@@ -73,9 +73,7 @@ public class PanelOpcjiWKasynie extends JPanel {
 
             usunElementy();
 
-
             ramkaGry.add(new PanelKasyna(ramkaGry));
-
 
             invalidate();
             repaint();
@@ -94,7 +92,7 @@ public class PanelOpcjiWKasynie extends JPanel {
         kontener.remove(efektyOFF);
         kontener.remove(efektyPoziom);
         kontener.remove(wroc);
-        kontener.remove(tlo);
+        tlo.setVisible(false);
 
     }
 }

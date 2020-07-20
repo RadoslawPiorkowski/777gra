@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class PanelPorad extends JPanel {
 
@@ -20,14 +19,14 @@ public class PanelPorad extends JPanel {
 
         BudowaGui.stworzTextArea(ramka, Wprowadzenie(), 30, 130, 280, 70);
         BudowaGui.stworzTextArea(ramka, opisPostaci("Piotrek", "Łatwy", "Programista", 2000), 30, 185, 250, 100);
-        BudowaGui.stworzTextArea(ramka, opisPostaci("Jan", "Normalny", "Urzędnik", 800), 30, 310, 250, 100);
-        BudowaGui.stworzTextArea(ramka, opisPostaci("Seba", "Trudny", "Bezrobotny", 100), 30, 450, 250, 100);
+        BudowaGui.stworzTextArea(ramka, opisPostaci("Jan", "Normalny", "Urzędnik", 1000), 30, 310, 250, 100);
+        BudowaGui.stworzTextArea(ramka, opisPostaci("Seba", "Trudny", "Bezrobotny", 200), 30, 450, 250, 100);
 
         BudowaGui.stworzTextArea(ramka, opisAutomatu(), 340, 190, 153, 150);
         BudowaGui.stworzTextArea(ramka, opisWygranych(), 340, 350, 145, 200);
 
 
-        BudowaGui.stworzTextArea(ramka, "Oto ochroniarz naszego wspaniałego kasyna - Borys.", 580, 200, 250, 100);
+        BudowaGui.stworzTextArea(ramka, "Oto ochroniarz naszego wspaniałego kasyna - Borys.", 580, 200, 210, 100);
         BudowaGui.stworzTextArea(ramka, opisOszustw(), 580, 320, 350, 300);
 
 
@@ -71,7 +70,7 @@ public class PanelPorad extends JPanel {
 
 
     private String opisAutomatu () {
-        return "Zasady gry są proste:\n- Stań przy automacie,\n- Postaw pieniędze,\n- Wybierz ilość linii,\n- Pociągnij za dźwignię,\n- Trzymaj ksiuki!";
+        return "Zasady gry są proste:\n- Stań przy automacie,\n- Postaw pieniędze,\n- Wybierz ilość linii,\n- Pociągnij za dźwignię,\n- Cofnij dźwignię,\n- Trzymaj kciuki!";
     }
 
     private String opisWygranych () {

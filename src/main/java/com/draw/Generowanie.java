@@ -1,10 +1,8 @@
 package com.draw;
 
-import java.util.Arrays;
-
 public class Generowanie {
 
-    static Znaki losowanie[][] = new Znaki [3][3];
+    public static Znaki losowanie[][] = new Znaki [3][3];
 
     public static void random () {
         for (int i = 0;i<3;i++) {
@@ -27,6 +25,7 @@ public class Generowanie {
         System.out.println(losowanie[0][0] + " " + losowanie[0][1] + " " + losowanie[0][2]);
         System.out.println(losowanie[1][0] + " " + losowanie[1][1] + " " + losowanie[1][2]);
         System.out.println(losowanie[2][0] + " " + losowanie[2][1] + " " + losowanie[2][2]);
+
     }
 
 
@@ -53,6 +52,12 @@ public class Generowanie {
         System.out.println(losowanie[1][0] + " " + losowanie[1][1] + " " + losowanie[1][2]);
         System.out.println(losowanie[2][0] + " " + losowanie[2][1] + " " + losowanie[2][2]);
         }
+    }
+
+    public static String getGrafika(Znaki znaki) {
+
+        System.out.println(znaki.getGrafika());
+        return znaki.getGrafika();
     }
 
 }
