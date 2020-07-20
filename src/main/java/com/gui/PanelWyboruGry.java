@@ -1,5 +1,8 @@
 package com.gui;
 
+import com.draw.Gracz;
+import com.draw.GraczMulti;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -22,7 +25,7 @@ public class PanelWyboruGry extends JPanel {
         tlo = BudowaGui.ustawGifJakoTlo(ramka, "gifyTla/startTlo.gif", this);
 
         graSolo = BudowaGui.stworzButton(ramka, "Jeden Gracz", 370,230,190,40, new WejscieDoKasyna());
-        graWParze = BudowaGui.stworzButton(ramka, "Dwóch Graczy", 370,320,190,40, new Wroc());
+        graWParze = BudowaGui.stworzButton(ramka, "Dwóch Graczy", 370,320,190,40, new ZagrajMulti());
         wroc = BudowaGui.stworzButton(ramka, "Wróć", 370,410,190,40, new Wroc());
 
     }
@@ -34,6 +37,23 @@ public class PanelWyboruGry extends JPanel {
         public void actionPerformed(ActionEvent actionEvent) {
             usunElementy();
             ramkaGry.add(new PanelKasyna(ramkaGry));
+            invalidate();
+            repaint();
+
+        }
+    }
+
+    class ZagrajMulti implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+
+            usunElementy();
+            Gracz.setGotowka(1500);
+            GraczMulti.setGotowka(1500);
+
+            ramkaGry.add(new PanelGryMulti(ramkaGry));
+
             invalidate();
             repaint();
 
