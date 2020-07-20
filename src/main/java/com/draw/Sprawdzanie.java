@@ -1,4 +1,5 @@
 package com.draw;
+import com.gui.*;
 
 public class Sprawdzanie {
 
@@ -57,57 +58,37 @@ public class Sprawdzanie {
             return 0;
     }
 
-    public static int zakladJednaLinia (int wysokoscZakladu) {
-        if (Gracz.gotowka - wysokoscZakladu <= 0) {
-            System.out.println("Brak gotówki");
-        } else {
+    public static void zakladJednaLinia (int wysokoscZakladu) {
             Gracz.setGotowka(Gracz.getGotowka() + Sprawdzanie.pierwszaLinia(wysokoscZakladu));
-            Gracz.setWynik(Sprawdzanie.pierwszaLinia(wysokoscZakladu));
-        }
-        return 0;
+            Gracz.setWynik(pierwszaLinia(wysokoscZakladu));
     }
 
-    public static int zakladDwieLinia (int wysokoscZakladu) {
-        if (Gracz.gotowka - 2 * wysokoscZakladu <= 0) {
-            System.out.println("Brak gotówki");
-        } else {
+    public static void zakladDwieLinia (int wysokoscZakladu) {
             Gracz.setGotowka(Gracz.getGotowka() + Sprawdzanie.pierwszaLinia(wysokoscZakladu) + Sprawdzanie.drugaLinia(wysokoscZakladu));
             Gracz.setWynik(Sprawdzanie.pierwszaLinia(wysokoscZakladu) + Sprawdzanie.drugaLinia(wysokoscZakladu));
-        }
-        return 0;
+
     }
 
-    public static int zakladTrzyLinia (int wysokoscZakladu) {
-        if (Gracz.gotowka - 3 * wysokoscZakladu <= 0) {
-            System.out.println("Brak gotówki");
-        } else {
+    public static void zakladTrzyLinia (int wysokoscZakladu) {
             Gracz.setGotowka(Gracz.getGotowka() + Sprawdzanie.pierwszaLinia(wysokoscZakladu) + Sprawdzanie.drugaLinia(wysokoscZakladu) + Sprawdzanie.trzeciaLinia(wysokoscZakladu));
             Gracz.setWynik(Sprawdzanie.pierwszaLinia(wysokoscZakladu) + Sprawdzanie.drugaLinia(wysokoscZakladu) + Sprawdzanie.trzeciaLinia(wysokoscZakladu));
-        }
-        return 0;
+
     }
 
-    public static int zakladCzteryLinia (int wysokoscZakladu) {
-        if (Gracz.gotowka - 3 * wysokoscZakladu <= 0) {
-            System.out.println("Brak gotówki");
-        } else {
+    public static void zakladCzteryLinia (int wysokoscZakladu) {
             Gracz.setGotowka(Gracz.getGotowka() + Sprawdzanie.pierwszaLinia(wysokoscZakladu) + Sprawdzanie.drugaLinia(wysokoscZakladu) + Sprawdzanie.trzeciaLinia(wysokoscZakladu) +
                     Sprawdzanie.czwartaLinia(wysokoscZakladu));
             Gracz.setWynik(Sprawdzanie.pierwszaLinia(wysokoscZakladu) + Sprawdzanie.drugaLinia(wysokoscZakladu) + Sprawdzanie.trzeciaLinia(wysokoscZakladu) +
                     Sprawdzanie.czwartaLinia(wysokoscZakladu));
-        }
-        return 0;
     }
 
-    public static int zakladPiecLinia (int wysokoscZakladu) {
-        if (Gracz.gotowka - 3 * wysokoscZakladu <= 0) {
-            System.out.println("Brak gotówki");
-        } else {
+    public static void zakladPiecLinia (int wysokoscZakladu) {
+
             Gracz.setGotowka(Gracz.getGotowka() + Sprawdzanie.pierwszaLinia(wysokoscZakladu) + Sprawdzanie.drugaLinia(wysokoscZakladu) + Sprawdzanie.trzeciaLinia(wysokoscZakladu) +
                     Sprawdzanie.czwartaLinia(wysokoscZakladu) + Sprawdzanie.piataLinia(wysokoscZakladu));
             Gracz.setWynik(Sprawdzanie.pierwszaLinia(wysokoscZakladu) + Sprawdzanie.drugaLinia(wysokoscZakladu) + Sprawdzanie.trzeciaLinia(wysokoscZakladu) +
                     Sprawdzanie.czwartaLinia(wysokoscZakladu) + Sprawdzanie.piataLinia(wysokoscZakladu));
-        }
-        return 0;
     }
+
+
 }

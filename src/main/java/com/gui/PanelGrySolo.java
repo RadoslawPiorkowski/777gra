@@ -11,29 +11,20 @@ import java.awt.event.ActionListener;
 
 public class PanelGrySolo extends JPanel {
 
+    JFrame ramkaGry;
+    JLabel tlo;
+    private static int gra = 0;
+    static int oszustwo = 0;
+    public static boolean zlapanoNaOszustwie = false;
 
     private static JTextField hajsWartosc;
     private static JTextField ostatniaWygranaWartos;
     private static JTextField zakladWartos;
     private static JTextField linieWartosc;
 
-    private static int gra = 0;
-
-    JFrame ramkaGry;
-    JLabel tlo;
-
-    static int oszustwo = 0;
-
-
-    JLabel s11;
-    JLabel s12;
-    JLabel s13;
-    JLabel s21;
-    JLabel s22;
-    JLabel s23;
-    JLabel s31;
-    JLabel s32;
-    JLabel s33;
+    JLabel s11, s12, s13;
+    JLabel s21, s22, s23;
+    JLabel s31, s32, s33;
 
     JLabel hajs;
     JLabel ostatniaWygrana;
@@ -59,7 +50,6 @@ public class PanelGrySolo extends JPanel {
         this.ramkaGry = ramka;
 
 
-
         if (gra == 0)
             Generowanie.random();
 
@@ -81,6 +71,7 @@ public class PanelGrySolo extends JPanel {
         s33 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[2][2].getGrafika(), this, 408, 282);
 
 
+        //przyciski oszustwa
         oszukuj4 = BudowaGui.stworzUkrytyButton(true,ramka,"" , 95, 78, 30,30, new Oszukuj());
         oszukuj2 = BudowaGui.stworzUkrytyButton(true, ramka,"" , 95, 145, 30,30, new Oszukuj());
         oszukuj1 = BudowaGui.stworzUkrytyButton(true,ramka,"" , 95, 210, 30,30, new Oszukuj());
@@ -115,12 +106,19 @@ public class PanelGrySolo extends JPanel {
 
         zakonczGre = BudowaGui.stworzButton(ramka, "Zakończ Gre", 730, 530, 150,30, new ZakonczGre());
 
+        System.out.println(gra);
+
+        if (zlapanoNaOszustwie)
+            przylapanoNaOszustiwe();
+
+
         ustawWartosci();
-        ustawPoczatkoweWartosci();
+        czyMaszPieniadze();
+
 
     }
 
-    private void ustawPoczatkoweWartosci() {
+    private static void ustawPoczatkoweWartosci() {
         hajsWartosc.setText(Gracz.getGotowka() + "");
         if (gra == 0) {
             ostatniaWygranaWartos.setText("0");
@@ -131,9 +129,11 @@ public class PanelGrySolo extends JPanel {
     }
 
     public static void ustawWartosci () {
-        if (gra > 0) {
-            hajsWartosc.setText(LosowaniePanel.getHajsWartosc().getText());
-            ostatniaWygranaWartos.setText(LosowaniePanel.getOstatniaWygranaWartos().getText());
+        if (gra == 0)
+            ustawPoczatkoweWartosci();
+        else {
+            hajsWartosc.setText(Gracz.getGotowka() + "");
+            ostatniaWygranaWartos.setText(Gracz.getWynik() + "");
             zakladWartos.setText(LosowaniePanel.getZakladWartos().getText());
             linieWartosc.setText(LosowaniePanel.getLinieWartosc().getText());
         }
@@ -145,15 +145,20 @@ public class PanelGrySolo extends JPanel {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
 
+            if (sprawdzCzywystarczyGotowkiNaGre()) {
 
-            Container kontener = ramkaGry.getContentPane();
+                odejmijPieniadzeZaZaklad();
 
-            tlo.setVisible(false);
-            kontener.remove(dzwignia);
-            kontener.add(new LosowaniePanel(ramkaGry));
 
-            invalidate();
-            repaint();
+                Container kontener = ramkaGry.getContentPane();
+                tlo.setVisible(false);
+                kontener.remove(dzwignia);
+                kontener.add(new LosowaniePanel(ramkaGry));
+                invalidate();
+                repaint();
+
+            } else
+                brakFuduszyInfo();
         }
     }
 
@@ -176,6 +181,12 @@ public class PanelGrySolo extends JPanel {
                 setOszustwo(5);
 
         }
+    }
+
+        public static void przylapanoNaOszustiwe() {
+        Gracz.setGotowka(5);
+        JOptionPane.showMessageDialog(null, "Zostałeś złapany na oszustwie!\nWiększość Twoich pieniędzy została 'skonfiskowna na pokrycie strat kasyna'");
+        zlapanoNaOszustwie = false;
     }
 
 
@@ -250,7 +261,46 @@ public class PanelGrySolo extends JPanel {
         }
     }
 
+    public void czyMaszPieniadze() {
+        if(Gracz.getGotowka() <= 0){
+            JOptionPane.showMessageDialog(null, "Zbankrutowałeś!\nZostałeś wyrzucony z kasyna!\nZapraszamy ponownie po wypłacie");
+            Container kontener = ramkaGry.getContentPane();
+            tlo.setVisible(false);
+            kontener.remove(dzwignia);
+            kontener.remove(zakonczGre);
+            usunElementy();
+            kontener.add(new PanelStartowy(ramkaGry));
+            PanelGrySolo.gra = 0;
+            invalidate();
+            repaint();
+        }
 
+    }
+
+    public boolean sprawdzCzywystarczyGotowkiNaGre() {
+        int iloscPieniedzy = Integer.parseInt(hajsWartosc.getText());
+        int zaklad = Integer.parseInt(zakladWartos.getText());
+        int obstawianeLinie = Integer.parseInt(linieWartosc.getText());
+
+        if (iloscPieniedzy < (zaklad * obstawianeLinie))
+            return false;
+        else
+            return true;
+    }
+
+    public void odejmijPieniadzeZaZaklad() {
+        int wczesnaIloscPieniedzy = Integer.parseInt(hajsWartosc.getText());
+        int zaklad = Integer.parseInt(zakladWartos.getText());
+        int obstawianeLinie = Integer.parseInt(linieWartosc.getText());
+
+        int iloscPieniedzyPoZakladzie = wczesnaIloscPieniedzy - (zaklad * obstawianeLinie);
+
+        Gracz.setGotowka(iloscPieniedzyPoZakladzie);
+    }
+
+    public void brakFuduszyInfo() {
+        JOptionPane.showMessageDialog(null, "Brak gototówki na taki zakład");
+    }
 
     public void usunElementy() {
         ramkaGry.getContentPane().remove(zwiekszZaklad);

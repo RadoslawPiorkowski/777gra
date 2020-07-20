@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00968aa3-f31a-4fdc-b224-24e077c1cb93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/symbole/diament.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/symbole/dzwonek.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/symbole/jablko.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/symbole/pomarancz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/symbole/siedem.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/symbole/wisnia.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/draw/Generowanie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/draw/Generowanie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/draw/Znaki.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/draw/Znaki.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/draw/Sprawdzanie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/draw/Sprawdzanie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/BudowaGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/BudowaGui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/LosowaniePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/LosowaniePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelGrySolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelGrySolo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelKasyna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelKasyna.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelPorad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelPorad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/PanelStartowy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/PanelStartowy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,30 +171,30 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="1170" y="328" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1595193983446" />
-    <state width="1877" height="311" key="GridCell.Tab.0.bottom" timestamp="1595197087993">
+    <state width="1877" height="313" key="GridCell.Tab.0.bottom" timestamp="1595248985957">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595011482571" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595169420061" />
-    <state width="1877" height="311" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1595197087993" />
-    <state width="1877" height="311" key="GridCell.Tab.0.center" timestamp="1595197087993">
+    <state width="1877" height="313" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1595248985957" />
+    <state width="1877" height="313" key="GridCell.Tab.0.center" timestamp="1595248985957">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595011482571" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595169420061" />
-    <state width="1877" height="311" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1595197087993" />
-    <state width="1877" height="311" key="GridCell.Tab.0.left" timestamp="1595197087993">
+    <state width="1877" height="313" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1595248985957" />
+    <state width="1877" height="313" key="GridCell.Tab.0.left" timestamp="1595248985957">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595011482571" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595169420061" />
-    <state width="1877" height="311" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1595197087993" />
-    <state width="1877" height="311" key="GridCell.Tab.0.right" timestamp="1595197087993">
+    <state width="1877" height="313" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1595248985957" />
+    <state width="1877" height="313" key="GridCell.Tab.0.right" timestamp="1595248985957">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595011482571" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595169420061" />
-    <state width="1877" height="311" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1595197087993" />
+    <state width="1877" height="313" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1595248985957" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1595157363961">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -224,6 +215,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="490" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595012605456" />
+    <state x="953" y="0" width="974" height="1167" key="com.intellij.ide.util.TipDialog" timestamp="1595239816052">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="953" y="0" width="974" height="1167" key="com.intellij.ide.util.TipDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1595239816052" />
     <state x="342" y="139" key="new project wizard" timestamp="1595154435297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,5 +1,10 @@
 package com.draw;
 
+import com.gui.LosowaniePanel;
+import com.gui.PanelGrySolo;
+
+import javax.swing.*;
+
 public class Generowanie {
 
     public static Znaki losowanie[][] = new Znaki [3][3];
@@ -32,8 +37,7 @@ public class Generowanie {
     public static void oszukuj () {
         double o = Math.random();
         if (o <0.5) {
-            Gracz.setGotowka(0);
-            System.out.println("Zostałeś złapany na oszustwie");
+            PanelGrySolo.zlapanoNaOszustwie = true;
         }
         else {
             for (int i = 0;i<3;i++) {
