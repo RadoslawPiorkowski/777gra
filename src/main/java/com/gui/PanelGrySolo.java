@@ -5,9 +5,11 @@ import com.draw.Gracz;
 import com.draw.Znaki;
 
 import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 public class PanelGrySolo extends JPanel {
 
@@ -42,8 +44,6 @@ public class PanelGrySolo extends JPanel {
     JButton zakonczGre;
 
     Znaki[][] tabelaSymboloi = Generowanie.losowanie;
-
-
 
     public PanelGrySolo(JFrame ramka) {
 
@@ -184,6 +184,11 @@ public class PanelGrySolo extends JPanel {
     }
 
         public static void przylapanoNaOszustiwe() {
+            UIManager belka = new UIManager();
+            belka.put("OptionPane.background",
+                    new ColorUIResource(204,153,51));
+            belka.put("Panel.background",
+                    new ColorUIResource(215,150,46));
         Gracz.setGotowka(5);
         JOptionPane.showMessageDialog(null, "Zostałeś złapany na oszustwie!\nWiększość Twoich pieniędzy została 'skonfiskowna na pokrycie strat kasyna'");
         zlapanoNaOszustwie = false;
@@ -242,7 +247,11 @@ public class PanelGrySolo extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
+            UIManager belka = new UIManager();
+            belka.put("OptionPane.background",
+                    new ColorUIResource(204,153,51));
+            belka.put("Panel.background",
+                    new ColorUIResource(215,150,46));
             Object[] opcje = {"Tak, wychodze!", "Nie, no zostane"};
 
             int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcesz wyjść z gry?", "Wyjśćie", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje[0]);
@@ -263,6 +272,11 @@ public class PanelGrySolo extends JPanel {
 
     public void czyMaszPieniadze() {
         if(Gracz.getGotowka() <= 0){
+            UIManager belka = new UIManager();
+            belka.put("OptionPane.background",
+                    new ColorUIResource(204,153,51));
+            belka.put("Panel.background",
+                    new ColorUIResource(215,150,46));
             JOptionPane.showMessageDialog(null, "Zbankrutowałeś!\nZostałeś wyrzucony z kasyna!\nZapraszamy ponownie po wypłacie");
             Container kontener = ramkaGry.getContentPane();
             tlo.setVisible(false);
@@ -299,6 +313,11 @@ public class PanelGrySolo extends JPanel {
     }
 
     public void brakFuduszyInfo() {
+        UIManager belka = new UIManager();
+        belka.put("OptionPane.background",
+                new ColorUIResource(204,153,51));
+        belka.put("Panel.background",
+                new ColorUIResource(215,150,46));
         JOptionPane.showMessageDialog(null, "Brak gototówki na taki zakład");
     }
 

@@ -3,6 +3,7 @@ package com.gui;
 import com.draw.Gracz;
 
 import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -91,6 +92,12 @@ public class PanelKasyna extends JPanel {
         public void actionPerformed(ActionEvent actionEvent) {
 
             Object[] opcje = {"Tak", "Nie"};
+
+            UIManager belka = new UIManager();
+            belka.put("OptionPane.background",
+                    new ColorUIResource(204,153,51));
+            belka.put("Panel.background",
+                    new ColorUIResource(215,150,46));
 
             int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcesz wyjść z Kasyna?", "Wyjśćie", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje[0]);
             if (decyzja == JOptionPane.YES_OPTION) {

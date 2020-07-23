@@ -6,6 +6,7 @@ import com.draw.GraczMulti;
 import com.draw.Znaki;
 
 import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -281,7 +282,11 @@ public class PanelGryMulti extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
+            UIManager belka = new UIManager();
+            belka.put("OptionPane.background",
+                    new ColorUIResource(204,153,51));
+            belka.put("Panel.background",
+                    new ColorUIResource(215,150,46));
             Object[] opcje = {"Tak, wychodzimy!", "Nie, dokończymy!"};
 
             int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcecie przerwać gre przed końcem?", "Wyjśćie", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje[0]);
@@ -293,6 +298,11 @@ public class PanelGryMulti extends JPanel {
 
     public void czyGraczeMajaPieniadze() {
 
+        UIManager belka = new UIManager();
+        belka.put("OptionPane.background",
+                new ColorUIResource(204,153,51));
+        belka.put("Panel.background",
+                new ColorUIResource(215,150,46));
         if(Gracz.getGotowka() <= 0){
             JOptionPane.showMessageDialog(null, "Gracz 1 zbankrutował!\n Gracz 2 wygrywa gre!");
             wrocNaStart();
@@ -307,6 +317,12 @@ public class PanelGryMulti extends JPanel {
     public void koniecGry() {
         int gracz1Gotowka = Gracz.getGotowka();
         int gracz2Gotowka = GraczMulti.getGotowka();
+
+        UIManager belka = new UIManager();
+        belka.put("OptionPane.background",
+                new ColorUIResource(204,153,51));
+        belka.put("Panel.background",
+                new ColorUIResource(215,150,46));
 
         if (gra == 0) {
             if (gracz1Gotowka > gracz2Gotowka)
@@ -349,6 +365,11 @@ public class PanelGryMulti extends JPanel {
 
 
     public void brakFuduszyInfo() {
+        UIManager belka = new UIManager();
+        belka.put("OptionPane.background",
+                new ColorUIResource(204,153,51));
+        belka.put("Panel.background",
+                new ColorUIResource(215,150,46));
         JOptionPane.showMessageDialog(null, "Jedn z graczy próbuje postawić więcej niż posiada...");
     }
 

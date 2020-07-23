@@ -83,7 +83,6 @@ public class BudowaGui {
         return napis;
     }
 
-
     public static JRadioButton JRadioButton (JFrame frame, String tekst, int x, int y, int szer, int wys, ButtonGroup buttonGroup) {
         JRadioButton radioButton = new JRadioButton(tekst);
         radioButton.setBounds(x, y, szer, wys);

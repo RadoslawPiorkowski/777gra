@@ -25,7 +25,6 @@ public class PanelOpcji extends JPanel {
     JLabel tlo;
 
 
-
     public PanelOpcji(JFrame ramkaGry) {
         this.ramkaGry = ramkaGry;
 
@@ -52,17 +51,13 @@ public class PanelOpcji extends JPanel {
         BudowaGui.stworzJLabel(ramkaGry, "Głośność Efektów:", 60, 390, 150,50);
         efektyPoziom = BudowaGui.stworzSlider(ramkaGry, 220, 390, 220, 50, 1, 100);
 
-
         wroc = BudowaGui.stworzButton(ramkaGry, "Wróć", 370, 500, 190,40, new Wroc());
 
     }
 
-
-
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(945, 595);
-
     }
 
     class Wroc implements ActionListener {
@@ -72,9 +67,7 @@ public class PanelOpcji extends JPanel {
 
             usunElementy();
 
-
             ramkaGry.add(new PanelStartowy(ramkaGry));
-
 
             invalidate();
             repaint();
