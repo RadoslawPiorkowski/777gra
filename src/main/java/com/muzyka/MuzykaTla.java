@@ -39,6 +39,8 @@ public class MuzykaTla {
 
     public static void graj() {
         klip.start();
+        zmienGlosnosc(glosnosc);
+        klip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
     public static void wycisz() {
