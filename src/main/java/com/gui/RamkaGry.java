@@ -1,18 +1,40 @@
 package com.gui;
 
-import javax.swing.*;
-import java.awt.*;
+import com.muzyka.DzwiekOszustwa;
+import com.muzyka.DzwiekWygranej;
+import com.muzyka.MuzykaTla;
 
+import javax.swing.*;
+import javax.sound.sampled.*;
+
+import java.awt.*;
 import java.io.IOException;
+
 
 public class RamkaGry extends JFrame {
 
+
     public Container kontener;
-    public JPanel start, opcje;
 
+    static MuzykaTla muzykaTla;
+    static DzwiekOszustwa dziwekiOszustwa;
+    static DzwiekWygranej dzwiekWygranej;
 
-    public RamkaGry() throws IOException {
+    public RamkaGry() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         super("Kasyno 777");
+
+        muzykaTla = new MuzykaTla();
+        if (MuzykaTla.getCzyWlaczyony() != 1f)
+            MuzykaTla.wycisz();
+
+        dzwiekWygranej = new DzwiekWygranej();
+        dziwekiOszustwa = new DzwiekOszustwa();
+
+        if (DzwiekWygranej.getCzyWlaczyony() != 1f) {
+            DzwiekWygranej.wycisz();
+            DzwiekOszustwa.wycisz();
+        }
+
 
         Dimension ekran = Toolkit.getDefaultToolkit().getScreenSize();
         int wysEkranu = ekran.height;
@@ -32,15 +54,11 @@ public class RamkaGry extends JFrame {
 
     }
 
-    public void zmienNaOpcjie() {
-
-    }
 
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(941, 622);
     }
-
 
 
 }

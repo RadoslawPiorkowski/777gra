@@ -2,16 +2,21 @@ package com.serializacja;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Mistrz implements Serializable {
 
     String imie;
     int gotowka;
 
-    static List<Mistrz> listaMistrzow = new ArrayList<>();
+    public static ArrayList<Mistrz> listaMistrzow = new ArrayList<Mistrz>();
 
     static {
+        try {
+            listaMistrzow = Serializacja.odczytZPliku();
+        } catch (NullPointerException ex) {
+            System.out.println("Lista tymczasowo pusta");
+        }
 
     }
 
@@ -24,25 +29,11 @@ public class Mistrz implements Serializable {
         return imie;
     }
 
-    public void setImie(String imie) {
-        this.imie = imie;
-    }
 
     public int getGotowka() {
         return gotowka;
     }
 
-    public void setGotowka(int gotowka) {
-        this.gotowka = gotowka;
-    }
-
-    public static List<Mistrz> getListaMistrzow() {
-        return listaMistrzow;
-    }
-
-    public static void setListaMistrzow(List<Mistrz> listaMistrzow) {
-        Mistrz.listaMistrzow = listaMistrzow;
-    }
 
     @Override
     public String toString() {

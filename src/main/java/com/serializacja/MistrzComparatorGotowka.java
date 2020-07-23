@@ -6,6 +6,6 @@ public class MistrzComparatorGotowka implements Comparator<Mistrz> {
 
     @Override
     public int compare(Mistrz o1, Mistrz o2) {
-        return o1.getGotowka() - o2.getGotowka();
+        return o2.getGotowka() - o1.getGotowka();
     }
 }

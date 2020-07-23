@@ -1,7 +1,7 @@
 package com.gui;
-
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
-
 import java.io.IOException;
 
 public class Gra {
@@ -10,7 +10,7 @@ public class Gra {
     static JPanel panelGry;
 
 
-    public static void rozpocznijGre() throws IOException {
+    public static void rozpocznijGre() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
         ekranGry = new RamkaGry();
         panelGry = new PanelStartowy(ekranGry);

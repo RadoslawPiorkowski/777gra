@@ -48,7 +48,7 @@ public class LosowaniePanelMulti extends JPanel {
 
 
         tlo = BudowaGui.ustawGifJakoTlo(ramka, "gifyTla/losowanie.gif", this);
-        dzwignia = BudowaGui.stworzUkrytyButton(true,ramka, "", 587, 138, 50,150, new PrzerwanieLosowania());
+        dzwignia = BudowaGui.stworzUkrytyButton(true,ramka, "", 587, 138, 50,300, new PrzerwanieLosowania());
 
         BudowaGui.stworzJLabel(ramka, "Gracz 1", 80, 450,100,25);
         BudowaGui.stworzJLabel(ramka, "Gracz 2", 80, 490,100,25);
@@ -121,7 +121,6 @@ public class LosowaniePanelMulti extends JPanel {
             sprawdzWygrana1();
             sprawdzWygrana2();
             usunElementy();
-            PanelGryMulti.gra--;
             ramkaGry.getContentPane().removeAll();
             ramkaGry.getContentPane().add(new PanelGryMulti(ramkaGry));
             invalidate();

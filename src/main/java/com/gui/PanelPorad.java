@@ -70,7 +70,7 @@ public class PanelPorad extends JPanel {
 
 
     private String opisAutomatu () {
-        return "Zasady gry są proste:\n- Stań przy automacie,\n- Postaw pieniędze,\n- Wybierz ilość linii,\n- Pociągnij za dźwignię,\n- Cofnij dźwignię,\n- Trzymaj kciuki!";
+        return "Zasady gry są proste:\n- Stań przy automacie\n- Postaw pieniędze\n- Wybierz ilość linii\n- Pociągnij za dźwignię\n- Cofnij dźwignię\n- Trzymaj kciuki!";
     }
 
     private String opisWygranych () {

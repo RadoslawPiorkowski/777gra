@@ -39,7 +39,7 @@ public class LosowaniePanel extends JPanel {
             this.ramkaGry = ramka;
 
             tlo = BudowaGui.ustawGifJakoTlo(ramka, "gifyTla/losowanie.gif", this);
-            dzwignia = BudowaGui.stworzUkrytyButton(true,ramka, "", 587, 138, 50,150, new PrzerwanieLosowania());
+            dzwignia = BudowaGui.stworzUkrytyButton(true,ramka, "", 587, 138, 50,300, new PrzerwanieLosowania());
 
             hajs = BudowaGui.stworzJLabel(ramka, "Gotówka:", 80, 420, 100, 40);
             hajsWartosc = BudowaGui.stworzTextFieldBezEdycji(ramka, 160, 428, 120, 25);

@@ -1,9 +1,17 @@
 package com.gui;
 
+import com.muzyka.DzwiekOszustwa;
+import com.muzyka.DzwiekWygranej;
+import com.muzyka.MuzykaTla;
+import com.serializacja.Serializacja;
+
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 
 public class PanelOpcjiWKasynie extends JPanel {
@@ -56,6 +64,19 @@ public class PanelOpcjiWKasynie extends JPanel {
 
         wroc = BudowaGui.stworzButton(ramkaGry, "Wróć", 370, 500, 190,40, new Wroc());
 
+
+        wybierzPrzyciskEfektow();
+        wybierzPrzyciskMuzyki();
+
+        muzykaOFF.addActionListener(new Wycisz());
+        efektyOFF.addActionListener(new Wycisz());
+
+        muzykaON.addActionListener(new Odcisz());
+        efektyON.addActionListener(new Odcisz());
+
+        muzkaPoziom.addChangeListener(new ZmienGlosnosc());
+        efektyPoziom.addChangeListener(new ZmienGlosnosc());
+
     }
 
 
@@ -94,5 +115,115 @@ public class PanelOpcjiWKasynie extends JPanel {
         kontener.remove(wroc);
         tlo.setVisible(false);
 
+    }
+
+    class Wycisz implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+
+            Object o = actionEvent.getSource();
+
+            if (o == muzykaOFF)
+                wyciszMuzyke();
+
+            if (o == efektyOFF)
+                wyciszEfekty();
+        }
+    }
+
+    class Odcisz implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+
+            Object o = actionEvent.getSource();
+
+            if (o == muzykaON)
+                odciszMuzyke();
+
+            if (o == efektyON)
+                odciszEfekty();
+        }
+    }
+
+    class ZmienGlosnosc implements ChangeListener {
+
+        @Override
+        public void stateChanged(ChangeEvent e) {
+
+            float[] zapisGlosnosci = Objects.requireNonNull(Serializacja.odczytUstawienMuzyki());
+
+            JSlider slider = (JSlider) e.getSource();
+            float glosnosc = (float) slider.getValue() - 40;
+            if (slider == muzkaPoziom) {
+                MuzykaTla.zmienGlosnosc(glosnosc);
+                zapisGlosnosci[0] = glosnosc;
+            } else {
+                DzwiekWygranej.zmienGlosnosc(glosnosc);
+                DzwiekOszustwa.zmienGlosnosc(glosnosc);
+                zapisGlosnosci[1] = glosnosc;
+            }
+
+            Serializacja.zapisUstawienMuzyki(zapisGlosnosci);
+        }
+    }
+
+    public static void wyciszMuzyke () {
+        MuzykaTla.wycisz();
+        zmienCzyMuzykaWlaczona(0f);
+
+    }
+
+    public static void odciszMuzyke() {
+        MuzykaTla.graj();
+        zmienCzyMuzykaWlaczona(1f);
+
+    }
+
+    public void wyciszEfekty() {
+        DzwiekWygranej.wycisz();
+        DzwiekOszustwa.wycisz();
+        zmienCzyEfektyWlaczone(0f);
+
+    }
+
+
+    public static void odciszEfekty() {
+        DzwiekOszustwa.odcisz();
+        DzwiekWygranej.odcisz();
+        zmienCzyEfektyWlaczone(1f);
+    }
+
+    private static void zmienCzyMuzykaWlaczona(float czyWlaczona) {
+        float[] zapisGlosnosci = Objects.requireNonNull(Serializacja.odczytUstawienMuzyki());
+        zapisGlosnosci[2] = czyWlaczona;
+        Serializacja.zapisUstawienMuzyki(zapisGlosnosci);
+    }
+
+    private static void zmienCzyEfektyWlaczone(float czyWlaczona) {
+        float[] zapisGlosnosci = Objects.requireNonNull(Serializacja.odczytUstawienMuzyki());
+        zapisGlosnosci[3] = czyWlaczona;
+        Serializacja.zapisUstawienMuzyki(zapisGlosnosci);
+    }
+
+    public void wybierzPrzyciskMuzyki() {
+        if (MuzykaTla.getCzyWlaczyony() == 1f) {
+            muzykaON.setSelected(true);
+            odciszMuzyke();
+        } else {
+            muzykaOFF.setSelected(true);
+            wyciszMuzyke();
+        }
+    }
+
+    public void wybierzPrzyciskEfektow() {
+        if (DzwiekWygranej.getCzyWlaczyony() == 1f) {
+            efektyON.setSelected(true);
+            odciszEfekty();
+        } else {
+            efektyOFF.setSelected(true);
+            wyciszEfekty();
+        }
     }
 }

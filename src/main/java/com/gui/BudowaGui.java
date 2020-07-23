@@ -96,7 +96,7 @@ public class BudowaGui {
         return radioButton;
     }
 
-    public static void stworzTextArea(JFrame frame, String tekst, int x, int y, int szer, int wys) {
+    public static JTextArea stworzTextArea(JFrame frame, String tekst, int x, int y, int szer, int wys) {
         JTextArea textArea = new JTextArea();
         textArea.setBounds(x, y, szer, wys);
         Font font = new Font("Times New Roman", Font.PLAIN, 14);
@@ -109,15 +109,16 @@ public class BudowaGui {
         textArea.setText(tekst);
         frame.add(textArea, 1, 0);
 
+        return textArea;
+
     }
 
     public static JSlider stworzSlider(JFrame frame, int x, int y, int szer, int wys, int minTick, int maxTick) {
-        JSlider jSlider = new JSlider(JSlider.HORIZONTAL, 0, 100, 10);
-        jSlider.setMinorTickSpacing(minTick);
-        jSlider.setMajorTickSpacing(maxTick);
+        JSlider jSlider = new JSlider(JSlider.HORIZONTAL, 0, 46, 10);
         jSlider.setBackground(new Color(71, 59, 45));
         jSlider.setForeground(Color.CYAN);
         jSlider.setBounds(x, y, szer, wys);
+        jSlider.setValue(jSlider.getMaximum() / 2);
         frame.add(jSlider, 1, 0);
         return jSlider;
     }

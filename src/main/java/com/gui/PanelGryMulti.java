@@ -4,13 +4,20 @@ import com.draw.Generowanie;
 import com.draw.Gracz;
 import com.draw.GraczMulti;
 import com.draw.Znaki;
+import com.muzyka.DzwiekWygranej;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class PanelGryMulti extends JPanel {
+
+    DzwiekWygranej dzwiekWygranej;
+
     JFrame ramkaGry;
     JLabel tlo;
     public static int gra = 50;
@@ -122,6 +129,15 @@ public class PanelGryMulti extends JPanel {
         zakonczGre = BudowaGui.stworzButton(ramka, "Zakończ Gre", 730, 530, 150,30, new ZakonczGre());
 
         ustawWartosci();
+
+        if (Integer.parseInt(ostatniaWygranaWartos1.getText()) != 0 || Integer.parseInt(ostatniaWygranaWartos2.getText()) != 0) {
+            try {
+                puscDzwiekWygranej();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         czyGraczeMajaPieniadze();
         koniecGry();
 
@@ -296,12 +312,12 @@ public class PanelGryMulti extends JPanel {
     public void czyGraczeMajaPieniadze() {
 
         if(Gracz.getGotowka() <= 0){
-            JOptionPane.showMessageDialog(null, "Gracz 1 zbankrutował!\n Gracz 2 wygrywa gre!");
+            JOptionPane.showMessageDialog(null, "Gracz 1 zbankrutował!\nGracz 2 wygrywa grę!");
             wrocNaStart();
         }
 
         if(GraczMulti.getGotowka() <= 0){
-            JOptionPane.showMessageDialog(null, "Gracz 2 zbankrutował!\n Gracz 1 wygrywa gre!");
+            JOptionPane.showMessageDialog(null, "Gracz 2 zbankrutował!\nGracz 1 wygrywa grę!");
             wrocNaStart();
         }
     }
@@ -312,9 +328,9 @@ public class PanelGryMulti extends JPanel {
 
         if (gra == 0) {
             if (gracz1Gotowka > gracz2Gotowka)
-                JOptionPane.showMessageDialog(null, "Gracz 1 bardziej się dorobił i wygrywa gre!");
+                JOptionPane.showMessageDialog(null, "Gracz 1 bardziej się dorobił i wygrywa grę!");
             else if (gracz2Gotowka > gracz1Gotowka)
-                JOptionPane.showMessageDialog(null, "Gracz 2 bardziej się dorobił i wygrywa gre!");
+                JOptionPane.showMessageDialog(null, "Gracz 2 bardziej się dorobił i wygrywa grę!");
             else
                 JOptionPane.showMessageDialog(null, "Gra zakończona remisem!");
 
@@ -395,6 +411,12 @@ public class PanelGryMulti extends JPanel {
 
     public static JTextField getLinieWartosc2() {
         return linieWartosc2;
+    }
+
+    private void puscDzwiekWygranej() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+
+        dzwiekWygranej = new DzwiekWygranej();
+        dzwiekWygranej.graj();
     }
 
 }

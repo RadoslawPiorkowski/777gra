@@ -1,5 +1,5 @@
 package com.draw;
-import com.gui.*;
+
 
 public class Sprawdzanie {
 

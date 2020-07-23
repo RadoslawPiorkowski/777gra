@@ -3,19 +3,26 @@ package com.gui;
 import com.draw.Generowanie;
 import com.draw.Gracz;
 import com.draw.Znaki;
+import com.muzyka.DzwiekOszustwa;
+import com.muzyka.DzwiekWygranej;
+import com.serializacja.Mistrz;
+import com.serializacja.Serializacja;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class PanelGrySolo extends JPanel {
+
 
     JFrame ramkaGry;
     JLabel tlo;
     public static int gra = 0;
     static int oszustwo = 0;
     public static boolean zlapanoNaOszustwie = false;
+
 
     private static JTextField hajsWartosc;
     private static JTextField ostatniaWygranaWartos;
@@ -49,22 +56,21 @@ public class PanelGrySolo extends JPanel {
 
         this.ramkaGry = ramka;
 
-
         if (gra == 0)
             Generowanie.random();
 
         tlo = BudowaGui.ustawGifJakoTlo(ramka, "gifyTla/automat.gif", this);
 
         //symbole
-        s11 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[0][0].getGrafika(), this, 152, 62);
-        s12 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[0][1].getGrafika(), this, 282, 62);
-        s13 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[0][2].getGrafika(), this, 412, 62);
+        s11 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[0][0].getGrafika(), this, 154, 62);
+        s12 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[0][1].getGrafika(), this, 284, 62);
+        s13 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[0][2].getGrafika(), this, 414, 62);
 
-        s21 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[1][0].getGrafika(), this, 148, 172);
+        s21 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[1][0].getGrafika(), this, 150, 172);
         s22 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[1][1].getGrafika(), this, 278, 172);
         s23 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[1][2].getGrafika(), this, 408, 172);
 
-        s31 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[2][0].getGrafika(), this, 148, 282);
+        s31 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[2][0].getGrafika(), this, 150, 282);
         s32 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[2][1].getGrafika(), this, 278, 282);
         s33 = BudowaGui.ustawSymbol(ramka, tabelaSymboloi[2][2].getGrafika(), this, 408, 282);
 
@@ -102,15 +108,31 @@ public class PanelGrySolo extends JPanel {
         zmniejszIloscLini = BudowaGui.stworzButton(ramka, "", 590, 488, 25, 25, new OdejmijLinie());
         zmniejszIloscLini.setBackground(new Color(212, 59, 59));
 
-        zakonczGre = BudowaGui.stworzButton(ramka, "Zakończ Gre", 730, 530, 150,30, new ZakonczGre());
+        zakonczGre = BudowaGui.stworzButton(ramka, "Zakończ Grę", 730, 530, 150,30, new ZakonczGre());
 
 
-        if (zlapanoNaOszustwie)
+        if (zlapanoNaOszustwie) {
+            try {
+                puscDzwiekPrzylapania();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             przylapanoNaOszustiwe();
+        }
 
 
         ustawWartosci();
+
+        if (Integer.parseInt(ostatniaWygranaWartos.getText()) != 0 && Integer.parseInt(hajsWartosc.getText()) != 5) {
+            try {
+                puscDzwiekWygranej();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         czyMaszPieniadze();
+
 
     }
 
@@ -238,10 +260,14 @@ public class PanelGrySolo extends JPanel {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
 
-            Object[] opcje = {"Tak, wychodze!", "Nie, no zostane"};
+            Object[] opcje = {"Tak, wychodzę!", "Nie, zostanę"};
+
 
             int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcesz wyjść z gry?", "Wyjśćie", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje[0]);
             if (decyzja == JOptionPane.YES_OPTION) {
+                if (Integer.parseInt(hajsWartosc.getText()) > 200)
+                    zapiszWynik();
+
                 usunElementy();
                 wrocNaStart();
             }
@@ -296,8 +322,6 @@ public class PanelGrySolo extends JPanel {
         ramkaGry.getContentPane().remove(oszukuj3);
         ramkaGry.getContentPane().remove(oszukuj4);
         ramkaGry.getContentPane().remove(oszukuj5);
-
-
     }
 
     public void wrocNaStart() {
@@ -329,4 +353,32 @@ public class PanelGrySolo extends JPanel {
     public void setOszustwo(int oszustwo) {
         PanelGrySolo.oszustwo = oszustwo;
     }
+
+    public void zapiszWynik() {
+        String imie = JOptionPane.showInputDialog("Podaj swoje imię, a może trafisz na listę mistrzów naszego kasyna!");
+        try {
+            if (imie.length() <= 15)
+                dodajDoListyMistrzow(imie);
+            else {
+                JOptionPane.showMessageDialog(null,"Zbyt długie imie!\nMoże pseudonim?");
+                zapiszWynik();
+            }
+        } catch (NullPointerException e) {
+            e.getStackTrace();
+        }
+    }
+
+    public void dodajDoListyMistrzow(String imie) {
+        Mistrz.listaMistrzow.add(new Mistrz(imie, Integer.parseInt(hajsWartosc.getText())));
+        Serializacja.zapisDoPliku(Mistrz.listaMistrzow);
+    }
+
+    private void puscDzwiekWygranej(){
+            DzwiekWygranej.graj();
+    }
+
+    private void puscDzwiekPrzylapania(){
+            DzwiekOszustwa.graj();
+    }
+
 }
