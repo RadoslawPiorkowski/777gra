@@ -34,9 +34,6 @@ public class PanelOpcji extends JPanel {
 
     JLabel tlo;
 
-
-
-
     public PanelOpcji(JFrame ramkaGry) {
         this.ramkaGry = ramkaGry;
 
@@ -65,7 +62,6 @@ public class PanelOpcji extends JPanel {
         BudowaGui.stworzJLabel(ramkaGry, "Głośność Efektów:", 60, 390, 150,50);
         efektyPoziom = BudowaGui.stworzSlider(ramkaGry, 220, 390, 220, 50, 5, 100);
         efektyPoziom.setValue((int) DzwiekWygranej.getGlosnosc() + 40);
-
 
         wroc = BudowaGui.stworzButton(ramkaGry, "Wróć", 370, 500, 190,40, new Wroc());
 
@@ -99,6 +95,7 @@ public class PanelOpcji extends JPanel {
                 wyciszEfekty();
         }
     }
+
 
     class Odcisz implements ActionListener {
 
@@ -137,11 +134,9 @@ public class PanelOpcji extends JPanel {
         }
     }
 
-
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(945, 595);
-
     }
 
     class Wroc implements ActionListener {
@@ -150,8 +145,8 @@ public class PanelOpcji extends JPanel {
         public void actionPerformed(ActionEvent actionEvent) {
 
             usunElementy();
-            ramkaGry.getContentPane().removeAll();
 
+            ramkaGry.getContentPane().removeAll();
             ramkaGry.add(new PanelStartowy(ramkaGry));
 
             invalidate();

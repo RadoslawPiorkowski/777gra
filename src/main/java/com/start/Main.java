@@ -2,7 +2,6 @@ package com.start;
 
 
 import com.gui.*;
-import com.serializacja.Serializacja;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;

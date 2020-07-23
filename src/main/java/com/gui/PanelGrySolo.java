@@ -9,6 +9,7 @@ import com.serializacja.Mistrz;
 import com.serializacja.Serializacja;
 
 import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -49,8 +50,6 @@ public class PanelGrySolo extends JPanel {
     JButton zakonczGre;
 
     Znaki[][] tabelaSymboloi = Generowanie.losowanie;
-
-
 
     public PanelGrySolo(JFrame ramka) {
 
@@ -110,7 +109,6 @@ public class PanelGrySolo extends JPanel {
 
         zakonczGre = BudowaGui.stworzButton(ramka, "Zakończ Grę", 730, 530, 150,30, new ZakonczGre());
 
-
         if (zlapanoNaOszustwie) {
             try {
                 puscDzwiekPrzylapania();
@@ -119,7 +117,6 @@ public class PanelGrySolo extends JPanel {
             }
             przylapanoNaOszustiwe();
         }
-
 
         ustawWartosci();
 
@@ -132,8 +129,6 @@ public class PanelGrySolo extends JPanel {
         }
 
         czyMaszPieniadze();
-
-
     }
 
     private static void ustawPoczatkoweWartosci() {
@@ -201,6 +196,11 @@ public class PanelGrySolo extends JPanel {
     }
 
         public static void przylapanoNaOszustiwe() {
+            UIManager belka = new UIManager();
+            belka.put("OptionPane.background",
+                    new ColorUIResource(148, 129, 65));
+            belka.put("Panel.background",
+                    new ColorUIResource(148, 129, 65));
         Gracz.setGotowka(5);
         JOptionPane.showMessageDialog(null, "Zostałeś złapany na oszustwie!\nWiększość Twoich pieniędzy została 'skonfiskowna na pokrycie strat kasyna'");
         zlapanoNaOszustwie = false;
@@ -260,7 +260,12 @@ public class PanelGrySolo extends JPanel {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
 
-            Object[] opcje = {"Tak, wychodzę!", "Nie, zostanę"};
+            UIManager belka = new UIManager();
+            belka.put("OptionPane.background",
+                    new ColorUIResource(148, 129, 65));
+            belka.put("Panel.background",
+                    new ColorUIResource(148, 129, 65));
+            Object[] opcje = {"Tak, wychodze!", "Nie, no zostane"};
 
 
             int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcesz wyjść z gry?", "Wyjśćie", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje[0]);
@@ -276,6 +281,11 @@ public class PanelGrySolo extends JPanel {
 
     public void czyMaszPieniadze() {
         if(Gracz.getGotowka() <= 0){
+            UIManager belka = new UIManager();
+            belka.put("OptionPane.background",
+                    new ColorUIResource(148, 129, 65));
+            belka.put("Panel.background",
+                    new ColorUIResource(148, 129, 65));
             JOptionPane.showMessageDialog(null, "Zbankrutowałeś!\nZostałeś wyrzucony z kasyna!\nZapraszamy ponownie po wypłacie");
             usunElementy();
             wrocNaStart();
@@ -304,6 +314,11 @@ public class PanelGrySolo extends JPanel {
     }
 
     public void brakFuduszyInfo() {
+        UIManager belka = new UIManager();
+        belka.put("OptionPane.background",
+                new ColorUIResource(148, 129, 65));
+        belka.put("Panel.background",
+                new ColorUIResource(148, 129, 65));
         JOptionPane.showMessageDialog(null, "Brak gototówki na taki zakład");
     }
 
@@ -334,13 +349,6 @@ public class PanelGrySolo extends JPanel {
         repaint();
     }
 
-    public static JTextField getHajsWartosc() {
-        return hajsWartosc;
-    }
-
-    public static JTextField getOstatniaWygranaWartos() {
-        return ostatniaWygranaWartos;
-    }
 
     public static JTextField getZakladWartos() {
         return zakladWartos;
@@ -355,6 +363,11 @@ public class PanelGrySolo extends JPanel {
     }
 
     public void zapiszWynik() {
+        UIManager belka = new UIManager();
+        belka.put("OptionPane.background",
+                new ColorUIResource(148, 129, 65));
+        belka.put("Panel.background",
+                new ColorUIResource(148, 129, 65));
         String imie = JOptionPane.showInputDialog("Podaj swoje imię, a może trafisz na listę mistrzów naszego kasyna!");
         try {
             if (imie.length() <= 15)

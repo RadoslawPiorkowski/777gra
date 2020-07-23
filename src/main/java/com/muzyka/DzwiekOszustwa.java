@@ -28,6 +28,7 @@ public class DzwiekOszustwa{
             muzyka = AudioSystem.getAudioInputStream(new File(new File(sciezkaDzwiekuOszustwa).getAbsolutePath()).getAbsoluteFile());
             klip = AudioSystem.getClip();
             klip.open(muzyka);
+            zmienGlosnosc(glosnosc);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -3,6 +3,7 @@ package com.gui;
 import com.draw.Gracz;
 
 import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -92,6 +93,12 @@ public class PanelKasyna extends JPanel {
 
             Object[] opcje = {"Tak", "Nie"};
 
+            UIManager belka = new UIManager();
+            belka.put("OptionPane.background",
+                    new ColorUIResource(148, 129, 65));
+            belka.put("Panel.background",
+                    new ColorUIResource(148, 129, 65));
+
             int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcesz wyjść z Kasyna?", "Wyjśćie", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje[0]);
             if (decyzja == JOptionPane.YES_OPTION) {
                 tlo.setVisible(false);
@@ -119,6 +126,5 @@ public class PanelKasyna extends JPanel {
         ramkaGry.getContentPane().remove(tanelaWynikow);
         ramkaGry.getContentPane().remove(wyjscie);
         tlo.setVisible(false);
-
     }
 }

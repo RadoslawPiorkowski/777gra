@@ -25,10 +25,6 @@ public class Generowanie {
                         losowanie[i][j] = Znaki.siedem;
             }
         }
-//        System.out.println(losowanie[0][0] + " " + losowanie[0][1] + " " + losowanie[0][2]);
-//        System.out.println(losowanie[1][0] + " " + losowanie[1][1] + " " + losowanie[1][2]);
-//        System.out.println(losowanie[2][0] + " " + losowanie[2][1] + " " + losowanie[2][2]);
-
     }
 
 
@@ -49,10 +45,6 @@ public class Generowanie {
                         losowanie[i][j] = Znaki.siedem;
                 }
             }
-        System.out.println(" ");
-//        System.out.println(losowanie[0][0] + " " + losowanie[0][1] + " " + losowanie[0][2]);
-//        System.out.println(losowanie[1][0] + " " + losowanie[1][1] + " " + losowanie[1][2]);
-//        System.out.println(losowanie[2][0] + " " + losowanie[2][1] + " " + losowanie[2][2]);
         }
     }
 }

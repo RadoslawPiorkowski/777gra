@@ -57,15 +57,9 @@ public class DzwiekWygranej{
         return glosnosc;
     }
 
-    public static void setGlosnosc(float glosnosc) {
-        DzwiekWygranej.glosnosc = glosnosc;
-    }
 
     public static float getCzyWlaczyony() {
         return czyWlaczyony;
     }
 
-    public static void setCzyWlaczyony(float czyWlaczyony) {
-        DzwiekWygranej.czyWlaczyony = czyWlaczyony;
-    }
 }

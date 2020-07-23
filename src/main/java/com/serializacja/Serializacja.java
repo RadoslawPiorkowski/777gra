@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Serializacja {
 
-    //serializacja
+
     public static void zapisDoPliku(ArrayList<Mistrz> mistrz) {
 
         try {
@@ -39,7 +39,6 @@ public class Serializacja {
     }
 
 
-//    deserializacja
     public static ArrayList<Mistrz> odczytZPliku() {
         try {
 

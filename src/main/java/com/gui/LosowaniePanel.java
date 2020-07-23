@@ -140,15 +140,6 @@ public class LosowaniePanel extends JPanel {
     }
 
 
-
-    public static JTextField getHajsWartosc() {
-        return hajsWartosc;
-    }
-
-    public static JTextField getOstatniaWygranaWartos() {
-        return ostatniaWygranaWartos;
-    }
-
     public static JTextField getZakladWartos() {
         return zakladWartos;
     }

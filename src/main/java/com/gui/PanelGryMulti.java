@@ -9,6 +9,7 @@ import com.muzyka.DzwiekWygranej;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -298,7 +299,11 @@ public class PanelGryMulti extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-
+            UIManager belka = new UIManager();
+            belka.put("OptionPane.background",
+                    new ColorUIResource(148, 129, 65));
+            belka.put("Panel.background",
+                    new ColorUIResource(148, 129, 65));
             Object[] opcje = {"Tak, wychodzimy!", "Nie, dokończymy!"};
 
             int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcecie przerwać gre przed końcem?", "Wyjśćie", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje[0]);
@@ -311,6 +316,11 @@ public class PanelGryMulti extends JPanel {
 
     public void czyGraczeMajaPieniadze() {
 
+        UIManager belka = new UIManager();
+        belka.put("OptionPane.background",
+                new ColorUIResource(148, 129, 65));
+        belka.put("Panel.background",
+                new ColorUIResource(148, 129, 65));
         if(Gracz.getGotowka() <= 0){
             JOptionPane.showMessageDialog(null, "Gracz 1 zbankrutował!\nGracz 2 wygrywa grę!");
             wrocNaStart();
@@ -325,6 +335,12 @@ public class PanelGryMulti extends JPanel {
     public void koniecGry() {
         int gracz1Gotowka = Gracz.getGotowka();
         int gracz2Gotowka = GraczMulti.getGotowka();
+
+        UIManager belka = new UIManager();
+        belka.put("OptionPane.background",
+                new ColorUIResource(148, 129, 65));
+        belka.put("Panel.background",
+                new ColorUIResource(148, 129, 65));
 
         if (gra == 0) {
             if (gracz1Gotowka > gracz2Gotowka)
@@ -367,6 +383,11 @@ public class PanelGryMulti extends JPanel {
 
 
     public void brakFuduszyInfo() {
+        UIManager belka = new UIManager();
+        belka.put("OptionPane.background",
+                new ColorUIResource(148, 129, 65));
+        belka.put("Panel.background",
+                new ColorUIResource(148, 129, 65));
         JOptionPane.showMessageDialog(null, "Jedn z graczy próbuje postawić więcej niż posiada...");
     }
 
@@ -413,7 +434,7 @@ public class PanelGryMulti extends JPanel {
         return linieWartosc2;
     }
 
-    private void puscDzwiekWygranej() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+    private void puscDzwiekWygranej() {
 
         dzwiekWygranej = new DzwiekWygranej();
         dzwiekWygranej.graj();

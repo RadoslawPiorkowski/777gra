@@ -1,12 +1,16 @@
 package com.gui;
 
 import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
 public class PanelStartowy extends JPanel {
+
+
+
 
     JFrame ramkaGry;
     JButton start;
@@ -27,7 +31,6 @@ public class PanelStartowy extends JPanel {
         opcje = BudowaGui.stworzButton(ramka, "Opcje", 370,270,190,40, new WejdzWOpcje());
         porady = BudowaGui.stworzButton(ramka, "Porady", 370,340,190,40, new Porady());
         wyjscie = BudowaGui.stworzButton(ramka, "Wyjście", 370,410,190,40, new Wyjscie());
-
 
     }
 
@@ -64,18 +67,18 @@ public class PanelStartowy extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+            String [] opcje = {"Tak", "Nie"};
 
-            Object[] opcje = {"Tak", "Nie"};
-
-            int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcesz wyjść z gry?", "Wyjśćie", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje[0]);
+            UIManager belka = new UIManager();
+            belka.put("OptionPane.background",
+                    new ColorUIResource(148, 129, 65));
+            belka.put("Panel.background",
+                    new ColorUIResource(148, 129, 65));
+            int decyzja = JOptionPane.showOptionDialog(null, "Czy napewno chcesz wyjść z gry?", "Wyjście", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcje, opcje);
             if (decyzja == JOptionPane.YES_OPTION)
                 ramkaGry.dispose();
         }
     }
-
-
-
-
 
     public void zmienPanel(JPanel panel) {
         Container kontener = ramkaGry.getContentPane();
@@ -103,5 +106,4 @@ public class PanelStartowy extends JPanel {
         return new Dimension(945, 595);
 
     }
-
 }

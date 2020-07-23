@@ -54,11 +54,9 @@ public class RamkaGry extends JFrame {
 
     }
 
-
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(941, 622);
     }
-
 
 }
