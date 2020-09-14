@@ -20,7 +20,8 @@ Project is created with:
 * Java Swing
 
 Graphics was created in:
-*<a herf="https://www.piskelapp.com/" rel="nofllow"> https://www.piskelapp.com/ </a>
+
+* <a herf="https://www.piskelapp.com/" rel="nofllow"> https://www.piskelapp.com/ </a>
 
 # Setup
 To run this project, first get its contents to your computer, then import as an existing maven project to your IDE.
